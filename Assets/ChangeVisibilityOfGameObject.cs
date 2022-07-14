@@ -12,14 +12,56 @@ public class ChangeVisibilityOfGameObject : MonoBehaviour
         
     }
 
+    private bool indictorIsDeactivated = false;
+
     // Update is called once per frame
     void Update()
     {
-        
     }
+
+    public GameObject headIndicator;
+    public GameObject abdomenIndicator;
+    public GameObject femurIndicator;
 
     public GameObject indicator;
     public bool indicatorExists;
+
+    public void ActivateGameObject()
+    {
+        if (GameObject.Find("1st_TargetPlaneReached_ToggleCheckBox_32x32") != null)
+        {
+            headIndicator.SetActive(true);
+        }
+        else if (GameObject.Find("2nd_TargetPlaneReached_ToggleCheckBox_32x32") != null)
+        {
+            abdomenIndicator.SetActive(true);
+        }
+        else if (GameObject.Find("3rd_TargetPlaneReached_ToggleCheckBox_32x32") != null)
+        {
+            femurIndicator.SetActive(true);
+        }
+    }
+
+    public void DeactivateGameObject()
+    {
+        var deactivateMrGuidanceToggleButton = GameObject.Find("DeactivateMRGuidance").GetComponent<Interactable>();
+
+        if (deactivateMrGuidanceToggleButton.IsToggled)
+        {
+            if (headIndicator.activeSelf)
+            {
+                headIndicator.SetActive(false);
+            }
+            else if (abdomenIndicator.activeSelf)
+            {
+                abdomenIndicator.SetActive(false);
+            }
+            else if (femurIndicator.activeSelf)
+            {
+                femurIndicator.SetActive(false);
+            }
+        }
+    }
 
     public void MakeAllGuidanceDataInvisible()
     {
