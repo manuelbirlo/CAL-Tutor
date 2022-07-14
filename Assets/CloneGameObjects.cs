@@ -83,7 +83,7 @@ public class CloneGameObjects : MonoBehaviour
 
         // ----------- Creation of probe sided edge Line ------------------------------------------------------------------------------
         probeSidedEdgeLineOfUsImage = new GameObject();
-        probeSidedEdgeLineOfUsImage.name = "ProbeSidedEdgeLine_CloneUSPlane" + imageCounter; ;
+        probeSidedEdgeLineOfUsImage.name = "ProbeSidedEdgeLine_CloneUSPlane" + imageCounter; 
         probeSidedEdgeLineOfUsImage.tag = "ProbeSidedLine";
         probeSidedEdgeLineOfUsImage.AddComponent<MeshFilter>();
 
