@@ -129,9 +129,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 1.0
-  preloadedAssets:
-  - {fileID: -5018474496085297503, guid: 638e812e18259bc48ba3c35f769e9598, type: 2}
-  - {fileID: -6907181111010707850, guid: 6934d34d9cf184643ad8ad68a74dc5fe, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -606,7 +604,7 @@ PlayerSettings:
   metroCertificatePassword: 
   metroCertificateSubject: UCL
   metroCertificateIssuer: UCL
-  metroCertificateNotAfter: 00c120f0fd4ad901
+  metroCertificateNotAfter: 8011510d71b9d901
   metroApplicationDescription: HoloLensARToolKit
   wsaImages:
     65636: Assets/Sample/Logo/StoreLogo.png
@@ -698,10 +696,10 @@ PlayerSettings:
       PointOfService: False
       RecordedCallsFolder: False
       Contacts: False
+      Proximity: False
       InternetClient: True
       CodeGeneration: False
       BackgroundMediaPlayback: False
-      Proximity: False
   metroTargetDeviceFamilies:
     Desktop: False
     Holographic: True

@@ -10048,7 +10048,7 @@ PrefabInstance:
     - target: {fileID: 5563659785885695806, guid: c2016a6d52b18854fb6b811a95af4275,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 5563659785885695806, guid: c2016a6d52b18854fb6b811a95af4275,
         type: 3}
@@ -10835,7 +10835,7 @@ Transform:
   m_GameObject: {fileID: 706793502}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: 0.1231, y: 0.147, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.015, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1455227553}
   m_RootOrder: 4
@@ -11026,9 +11026,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d0abdf86f111e4eb52bd1a927e107a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  headIndicator: {fileID: 0}
-  abdomenIndicator: {fileID: 0}
-  femurIndicator: {fileID: 0}
+  headIndicator: {fileID: 460212827}
+  abdomenIndicator: {fileID: 1997977743}
+  femurIndicator: {fileID: 115894405}
   indicator: {fileID: 0}
   indicatorExists: 0
 --- !u!4 &723107287
@@ -11337,7 +11337,7 @@ PrefabInstance:
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
       propertyPath: Events.Array.data[2].Event.m_PersistentCalls.m_Calls.Array.size
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
@@ -11401,6 +11401,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
+      propertyPath: Events.Array.data[2].Event.m_PersistentCalls.m_Calls.Array.data[9].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
+        type: 3}
       propertyPath: Events.Array.data[2].Event.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 552827919}
@@ -11442,6 +11447,11 @@ PrefabInstance:
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
       propertyPath: Events.Array.data[2].Event.m_PersistentCalls.m_Calls.Array.data[8].m_Target
+      value: 
+      objectReference: {fileID: 723107286}
+    - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
+        type: 3}
+      propertyPath: Events.Array.data[2].Event.m_PersistentCalls.m_Calls.Array.data[9].m_Target
       value: 
       objectReference: {fileID: 723107286}
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
@@ -11491,6 +11501,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
+      propertyPath: Events.Array.data[2].Event.m_PersistentCalls.m_Calls.Array.data[9].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
+        type: 3}
       propertyPath: Events.Array.data[2].Event.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetTargetInvisible
       objectReference: {fileID: 0}
@@ -11536,6 +11551,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
+      propertyPath: Events.Array.data[2].Event.m_PersistentCalls.m_Calls.Array.data[9].m_MethodName
+      value: DeactivateGameObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
+        type: 3}
       propertyPath: Events.Array.data[2].Event.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ChangeVisibilityOfGameObject, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -11577,6 +11597,11 @@ PrefabInstance:
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
       propertyPath: Events.Array.data[2].Event.m_PersistentCalls.m_Calls.Array.data[8].m_TargetAssemblyTypeName
+      value: ChangeVisibilityOfGameObject, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
+        type: 3}
+      propertyPath: Events.Array.data[2].Event.m_PersistentCalls.m_Calls.Array.data[9].m_TargetAssemblyTypeName
       value: ChangeVisibilityOfGameObject, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
@@ -11723,7 +11748,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Events.Array.data[2].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[9].m_Target
       value: 
-      objectReference: {fileID: 1533922514}
+      objectReference: {fileID: 1533922522}
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
       propertyPath: Events.Array.data[2].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -11867,6 +11892,11 @@ PrefabInstance:
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
       propertyPath: Events.Array.data[2].Event.m_PersistentCalls.m_Calls.Array.data[8].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
+        type: 3}
+      propertyPath: Events.Array.data[2].Event.m_PersistentCalls.m_Calls.Array.data[9].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
@@ -17196,7 +17226,7 @@ Transform:
   m_GameObject: {fileID: 1219115158}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: 0.1231, y: 0.147, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.015, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1455227553}
   m_RootOrder: 5
@@ -20487,7 +20517,7 @@ Transform:
   m_GameObject: {fileID: 1433200406}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: 0.1231, y: 0.147, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.015, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1455227553}
   m_RootOrder: 6
@@ -23020,7 +23050,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 736619379}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1533922514
+--- !u!114 &1533922522
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
