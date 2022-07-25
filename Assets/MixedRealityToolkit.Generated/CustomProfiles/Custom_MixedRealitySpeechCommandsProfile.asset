@@ -101,21 +101,21 @@ MonoBehaviour:
       description: None
       axisConstraint: 0
   - localizationKey: 
-    keyword: Start head navigation
+    keyword: 'Start head '
     keyCode: 0
     action:
       id: 0
       description: None
       axisConstraint: 0
   - localizationKey: 
-    keyword: Start abdomen navigation
+    keyword: 'Start abdomen '
     keyCode: 0
     action:
       id: 0
       description: None
       axisConstraint: 0
   - localizationKey: 
-    keyword: Start femur navigation
+    keyword: 'Start femur '
     keyCode: 0
     action:
       id: 0
@@ -151,6 +151,34 @@ MonoBehaviour:
       axisConstraint: 0
   - localizationKey: 
     keyword: Make phantom transparent
+    keyCode: 0
+    action:
+      id: 0
+      description: None
+      axisConstraint: 0
+  - localizationKey: 
+    keyword: Pin Plane
+    keyCode: 0
+    action:
+      id: 1
+      description: Select
+      axisConstraint: 2
+  - localizationKey: 
+    keyword: 'Confirm head '
+    keyCode: 0
+    action:
+      id: 0
+      description: None
+      axisConstraint: 0
+  - localizationKey: 
+    keyword: 'Confirm abdomen '
+    keyCode: 0
+    action:
+      id: 0
+      description: None
+      axisConstraint: 0
+  - localizationKey: 
+    keyword: Confirm femur
     keyCode: 0
     action:
       id: 0

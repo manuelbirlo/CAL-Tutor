@@ -4793,7 +4793,7 @@ PrefabInstance:
     - target: {fileID: 7775457550771842879, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
       propertyPath: VoiceCommand
-      value: 
+      value: 'Confirm abdomen '
       objectReference: {fileID: 0}
     - target: {fileID: 7775457550771842879, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
@@ -7527,29 +7527,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 547385981}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &547385986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547385985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf98dd1206224111a38765365e98e207, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lockCursorWhenFocusLocked: 1
-  setCursorInvisibleWhenFocusLocked: 0
-  maxGazeCollisionDistance: 10
-  raycastLayerMasks:
-  - serializedVersion: 2
-    m_Bits: 4294967291
-  stabilizer:
-    storedStabilitySamples: 60
-  gazeTransform: {fileID: 0}
-  minHeadVelocityThreshold: 0.5
-  maxHeadVelocityThreshold: 2
 --- !u!114 &547385987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7979,7 +7956,7 @@ PrefabInstance:
     - target: {fileID: 8779034279059886464, guid: 3f1f46cbecbe08e46a303ccfdb5b498a,
         type: 3}
       propertyPath: VoiceCommand
-      value: Start femur navigation
+      value: 'Start femur '
       objectReference: {fileID: 0}
     - target: {fileID: 8779034279059886464, guid: 3f1f46cbecbe08e46a303ccfdb5b498a,
         type: 3}
@@ -9788,7 +9765,7 @@ PrefabInstance:
     - target: {fileID: 3359407888607791997, guid: c2016a6d52b18854fb6b811a95af4275,
         type: 3}
       propertyPath: m_text
-      value: Say "Pin ultrasound plane"
+      value: Say "Pin"
       objectReference: {fileID: 0}
     - target: {fileID: 3359407888607791997, guid: c2016a6d52b18854fb6b811a95af4275,
         type: 3}
@@ -9948,7 +9925,7 @@ PrefabInstance:
     - target: {fileID: 3940742307559929476, guid: c2016a6d52b18854fb6b811a95af4275,
         type: 3}
       propertyPath: VoiceCommand
-      value: Pin ultrasound plane
+      value: Pin Plane
       objectReference: {fileID: 0}
     - target: {fileID: 3940742307559929476, guid: c2016a6d52b18854fb6b811a95af4275,
         type: 3}
@@ -14383,7 +14360,7 @@ PrefabInstance:
     - target: {fileID: 7775457550771842879, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
       propertyPath: VoiceCommand
-      value: 
+      value: 'Confirm head '
       objectReference: {fileID: 0}
     - target: {fileID: 7775457550771842879, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
@@ -16562,7 +16539,7 @@ PrefabInstance:
     - target: {fileID: 8779034279059886464, guid: 3f1f46cbecbe08e46a303ccfdb5b498a,
         type: 3}
       propertyPath: VoiceCommand
-      value: Start abdomen navigation
+      value: 'Start abdomen '
       objectReference: {fileID: 0}
     - target: {fileID: 8779034279059886464, guid: 3f1f46cbecbe08e46a303ccfdb5b498a,
         type: 3}
@@ -19207,7 +19184,7 @@ PrefabInstance:
     - target: {fileID: 7775457550771842879, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
       propertyPath: VoiceCommand
-      value: 
+      value: Confirm femur
       objectReference: {fileID: 0}
     - target: {fileID: 7775457550771842879, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
@@ -28792,7 +28769,7 @@ PrefabInstance:
     - target: {fileID: 8779034279059886464, guid: 3f1f46cbecbe08e46a303ccfdb5b498a,
         type: 3}
       propertyPath: VoiceCommand
-      value: Start head navigation
+      value: 'Start head '
       objectReference: {fileID: 0}
     - target: {fileID: 8779034279059886464, guid: 3f1f46cbecbe08e46a303ccfdb5b498a,
         type: 3}

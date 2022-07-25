@@ -671,9 +671,9 @@ PlayerSettings:
       AllJoyn: False
       MusicLibrary: False
       LowLevelDevices: False
-      PrivateNetworkClientServer: False
-      InternetClientServer: False
-      VideosLibrary: False
+      PrivateNetworkClientServer: True
+      InternetClientServer: True
+      VideosLibrary: True
       Objects3D: False
       RemoteSystem: False
       BlockedChatMessages: False
