@@ -218,7 +218,7 @@ public class PlaneNavigation : MonoBehaviour
         LocalVerticesTargetPlane = new List<Vector3>();
         GlobalVerticesTargetPlane = new List<Vector3>();
 
-        targetUltrasoundPlane = GameObject.Find("USPlane" + PlaneNumber);
+        //targetUltrasoundPlane = GameObject.Find("USPlane" + PlaneNumber);
         //targetPos = targetUltrasoundPlane.transform.position;
 
         /*
@@ -233,6 +233,8 @@ public class PlaneNavigation : MonoBehaviour
         // Set the number of vertex fo the Line Renderer
         line.SetVertexCount(2);
         */
+
+        UnityEngine.Debug.Log("2");
     }
 
     void OnDisable()
@@ -262,6 +264,8 @@ public class PlaneNavigation : MonoBehaviour
         // Check if the GameObjects are not null
         if (ultrasoundPlaneOfProbe != null && targetUltrasoundPlane != null)
         {
+            UnityEngine.Debug.Log("3");
+
             TimeSpan timeSpan = stopWatch.Elapsed;
             elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds / 10);
 
@@ -289,7 +293,7 @@ public class PlaneNavigation : MonoBehaviour
             child4LineRenderer.SetPosition(0, CornerVerticesProbePlane[3]);
             child4LineRenderer.SetPosition(1, CornerVerticesTargetPlane[3]);
 
-
+            UnityEngine.Debug.Log("4");
             //probeSidedEdgeOfUSPlane.SetPosition(0, CornerVerticesProbePlane[0]);
             //probeSidedEdgeOfUSPlane.SetPosition(1, CornerVerticesProbePlane[1]);
 
@@ -384,6 +388,7 @@ public class PlaneNavigation : MonoBehaviour
               , Vector3.Lerp(startPositionOfArrow4, CornerVerticesTargetPlane[3], 1) //1 - PercentHead)
               , startPositionOfArrow4 });
 
+            UnityEngine.Debug.Log("5");
             //sphere.transform.position = CornerVerticesProbePlane[0];
 
             //Vector3 displacement = velocity * Time.deltaTime;
@@ -419,6 +424,8 @@ public class PlaneNavigation : MonoBehaviour
 
     void GetVertices()
     {
+        UnityEngine.Debug.Log("6");
+
         // Probe plane
         LocalVerticesProbePlane = new List<Vector3>(ultrasoundPlaneOfProbe.GetComponent<MeshFilter>().mesh.vertices);
 
@@ -448,6 +455,8 @@ public class PlaneNavigation : MonoBehaviour
         {
             CornerVerticesTargetPlane.Add(GlobalVerticesTargetPlane[id]);
         }
+
+        UnityEngine.Debug.Log("7");
     }
 
     //public void SetTargetUltrasoundPlane()

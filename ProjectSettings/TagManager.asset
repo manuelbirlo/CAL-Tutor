@@ -17,6 +17,8 @@ TagManager:
   - HeadInstructionCard
   - AbdomenInstructionCard
   - FemurInstructionCard
+  - StandardPlane
+  - NavigationEndButton
   layers:
   - Default
   - TransparentFX

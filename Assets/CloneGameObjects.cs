@@ -10,6 +10,7 @@ using System.Linq;
 public class CloneGameObjects : MonoBehaviour
 {
     public GameObject rootObj;
+    public GameObject babyModel;
 
     public Quaternion duplicateLocalRotation;
 
@@ -76,10 +77,26 @@ public class CloneGameObjects : MonoBehaviour
         duplicate.transform.position = rootObj.transform.position;
         duplicate.transform.rotation = rootObj.transform.rotation;
 
-        duplicate.name = "USPlane" + imageCounter;
+        if (imageCounter == 1)
+        {
+            duplicate.name = "HeadPlane";
+        }
+        else if (imageCounter == 2)
+        {
+            duplicate.name = "AbdomenPlane";
+        }
+        else if (imageCounter == 3)
+        {
+            duplicate.name = "FemurPlane";
+        }
+
+        //duplicate.name = "USPlane" + imageCounter;
         nameOfCurrentUltrasoundPlane = duplicate.name;
 
         AttachLabel(duplicate);
+
+        // Make the newly created plane object a child of the baby model.
+        duplicate.transform.parent = babyModel.transform;
 
         // ----------- Creation of probe sided edge Line ------------------------------------------------------------------------------
         probeSidedEdgeLineOfUsImage = new GameObject();
@@ -153,20 +170,20 @@ public class CloneGameObjects : MonoBehaviour
     {
         GameObject originalTextLabel;
 
-        if (duplicate.name == "USPlane1")
+        if (duplicate.name == "HeadPlane")
         {
             originalTextLabel = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(g => g.CompareTag("USPlaneLabel"));
             //originalTextLabel = GameObject.Find("HeadLabelForUsImage");
             //originalTextLabel = GameObject.Find("AbdomenLabelForUsImage");
             originalTextLabel.SetActive(true);
         }
-        else if (duplicate.name == "USPlane2")
+        else if (duplicate.name == "AbdomenPlane")
         {
             //originalTextLabel = GameObject.Find("AbdomenLabelForUsImage");
             originalTextLabel = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(g => g.CompareTag("USPlaneLabel2"));
             originalTextLabel.SetActive(true);
         }
-        else if (duplicate.name == "USPlane3")
+        else if (duplicate.name == "FemurPlane")
         {
             //originalTextLabel = GameObject.Find("FemurLabelForUsImage");
             originalTextLabel = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(g => g.CompareTag("USPlaneLabel3"));
