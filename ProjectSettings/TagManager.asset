@@ -19,6 +19,7 @@ TagManager:
   - FemurInstructionCard
   - StandardPlane
   - NavigationEndButton
+  - TextLabelOfMirroredPlane
   layers:
   - Default
   - TransparentFX

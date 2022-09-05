@@ -322,6 +322,7 @@ public class CsvReader : MonoBehaviour
         //}
     }
 
+    
     public void PlaceStandardPlanes()
     {
         //headStandardPlane.transform.localScale = new Vector3(rootObj.transform.lossyScale.x, rootObj.transform.lossyScale.y, rootObj.transform.lossyScale.z);

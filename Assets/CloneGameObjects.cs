@@ -31,6 +31,7 @@ public class CloneGameObjects : MonoBehaviour
 
     private GameObject duplicate;
     private Renderer rend;
+    private Renderer rendererOfMirroredPlane;
     public string _FileLocation, _FileName;
 
     public int imageCounter;
@@ -149,6 +150,35 @@ public class CloneGameObjects : MonoBehaviour
 
         StartCoroutine(PrepareVideo());
 
+        GameObject mirroredPlane = GameObject.Instantiate(duplicate);
+        mirroredPlane.tag = "Untagged";
+        mirroredPlane.name = duplicate.name + "Mirrored";
+        mirroredPlane.transform.parent = duplicate.transform;
+
+        mirroredPlane.transform.localPosition = new Vector3(0, 0, 0);
+        mirroredPlane.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 180));
+        mirroredPlane.transform.localScale = new Vector3(1, 1, 1);
+
+        GameObject textLabel;
+
+        if (mirroredPlane.name == "HeadPlaneMirrored")
+        {
+            textLabel = mirroredPlane.transform.FindChild("HeadLabelForUsImage").gameObject;
+            textLabel.SetActive(false);
+        }
+        else if (mirroredPlane.name == "AbdomenPlaneMirrored")
+        {
+            textLabel = mirroredPlane.transform.FindChild("AbdomenLabelForUsImage").gameObject;
+            textLabel.SetActive(false);
+        }
+        else if (mirroredPlane.name == "FemurPlaneMirrored")
+        {
+            textLabel = mirroredPlane.transform.FindChild("FemurLabelForUsImage").gameObject;
+            textLabel.SetActive(false);
+        }
+
+        rendererOfMirroredPlane = mirroredPlane.GetComponent<Renderer>();
+
         //videoPlayer.frameReady -= FrameReady;
     }
 
@@ -215,15 +245,15 @@ public class CloneGameObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (lineRenderingEnabled)
-        //{
-        //    LinePosOne = CornerVerticesProbePlane[0];
-        //    LinePosTwo = CornerVerticesProbePlane[1];
+        if (lineRenderingEnabled)
+        {
+            LinePosOne = CornerVerticesProbePlane[0];
+            LinePosTwo = CornerVerticesProbePlane[1];
 
-        //    GetVertices(duplicate);
-        //    probeSidedEdgeOfUSPlane.SetPosition(0, CornerVerticesProbePlane[0]);
-        //    probeSidedEdgeOfUSPlane.SetPosition(1, CornerVerticesProbePlane[1]);
-        //}
+            GetVertices(duplicate);
+            probeSidedEdgeOfUSPlane.SetPosition(0, CornerVerticesProbePlane[0]);
+            probeSidedEdgeOfUSPlane.SetPosition(1, CornerVerticesProbePlane[1]);
+        }
     }
 
     //public void VideoPreparation(string path_)
@@ -247,6 +277,7 @@ public class CloneGameObjects : MonoBehaviour
         //vp.frame = frameIndex + 3000;
         //thumbnailVid.texture = Get2DTexture();
         rend.material.mainTexture = Get2DTexture(vp);
+        rendererOfMirroredPlane.material.mainTexture = rend.material.mainTexture;
 
         //vp.frame = frameIndex + 30;
 
