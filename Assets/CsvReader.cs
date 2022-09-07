@@ -56,12 +56,9 @@ public class CsvReader : MonoBehaviour
     public float EulerRotationZ;
 
     private bool lineRenderingEnabled = false;
-
     private bool disableProbeSidedLanes = true;
 
     public float RotX;
-
-    //LineRenderer probeSidedEdgeOfUSPlane;
     public List<Vector3> CornerVerticesProbePlane;
     List<Vector3> LocalVerticesProbePlane;
     List<Vector3> GlobalVerticesProbePlane;
@@ -122,9 +119,19 @@ public class CsvReader : MonoBehaviour
         }
     }
 
+    public void DeactivateLineRendering()
+    {
+        lineRenderingEnabled = false;
+    }
+
+    public void ReactivateLineRendering()
+    {
+        lineRenderingEnabled = true;
+    }
+
     private void ReadCsv()
     {
-        using (StreamReader strReader = new StreamReader("Assets/StandardPlanes_and_Cube_Locations - Copy.csv"))
+        using (StreamReader strReader = new StreamReader("Assets/GameObjectLocations.csv"))
         {
            
             headPlaneX = 0;
@@ -165,15 +172,13 @@ public class CsvReader : MonoBehaviour
             while (!endOfFile)
             {
                 currentLine = strReader.ReadLine();
-                //strWriter.WriteLine(data);
-
+                
                 if (currentLine == null)
                 {
                     endOfFile = true;
                     break;
                 }
 
-                //dataValues is each row
                 var currentSplitLine = currentLine.Split(',');
 
                 if (currentSplitLine[0] == "pos_x")
@@ -333,146 +338,6 @@ public class CsvReader : MonoBehaviour
             }
         }
         
-
-        // Skip the header line of the .csv file.
-        //for (int i = 1; i < lines.Length; i++)
-        //{
-        //    var currentSplitLine = lines[i].Split(',');
-
-        //    if (currentSplitLine[0] == "pos_x")
-        //    {
-        //        if (!float.TryParse(currentSplitLine[1].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out headPlaneX))
-        //        {
-        //            headPlaneX = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[2].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out abdomenPlaneX))
-        //        {
-        //            abdomenPlaneX = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[3].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out femurPlaneX))
-        //        {
-        //            femurPlaneX = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out cubeX))
-        //        {
-        //            cubeX = 0;
-        //        }
-        //    }
-        //    else if (currentSplitLine[0] == "pos_y")
-        //    {
-        //        if (!float.TryParse(currentSplitLine[1].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out headPlaneY))
-        //        {
-        //            headPlaneY = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[2].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out abdomenPlaneY))
-        //        {
-        //            abdomenPlaneY = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[3].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out femurPlaneY))
-        //        {
-        //            femurPlaneY = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out cubeY))
-        //        {
-        //            cubeY = 0;
-        //        }
-        //    }
-        //    else if (currentSplitLine[0] == "pos_z")
-        //    {
-        //        if (!float.TryParse(currentSplitLine[1].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out headPlaneZ))
-        //        {
-        //            headPlaneZ = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[2].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out abdomenPlaneZ))
-        //        {
-        //            abdomenPlaneZ = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[3].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out femurPlaneZ))
-        //        {
-        //            femurPlaneZ = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out cubeZ))
-        //        {
-        //            cubeZ = 0;
-        //        }
-        //    }
-        //    else if (currentSplitLine[0] == "rot_x")
-        //    {
-        //        if (!float.TryParse(currentSplitLine[1].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out headPlaneRotX))
-        //        {
-        //            headPlaneRotX = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[2].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out abdomenPlaneRotX))
-        //        {
-        //            abdomenPlaneRotX = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[3].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out femurPlaneRotX))
-        //        {
-        //            femurPlaneRotX = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out cubeRotX))
-        //        {
-        //            cubeRotX = 0;
-        //        }
-        //    }
-        //    else if (currentSplitLine[0] == "rot_y")
-        //    {
-        //        if (!float.TryParse(currentSplitLine[1].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out headPlaneRotY))
-        //        {
-        //            headPlaneRotY = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[2].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out abdomenPlaneRotY))
-        //        {
-        //            abdomenPlaneRotY = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[3].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out femurPlaneRotY))
-        //        {
-        //            femurPlaneRotY = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out cubeRotY))
-        //        {
-        //            cubeRotY = 0;
-        //        }
-        //    }
-        //    else if (currentSplitLine[0] == "rot_z")
-        //    {
-        //        if (!float.TryParse(currentSplitLine[1].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out headPlaneRotZ))
-        //        {
-        //            headPlaneRotZ = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[2].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out abdomenPlaneRotZ))
-        //        {
-        //            abdomenPlaneRotZ = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[3].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out femurPlaneRotZ))
-        //        {
-        //            femurPlaneRotZ = 0;
-        //        }
-
-        //        if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out cubeRotZ))
-        //        {
-        //            cubeRotZ = 0;
-        //        }
-        //    }
-        //}
-
         standardPlaneLocations = new StandardPlaneLocations
         {
             HeadPlaneX = headPlaneX,
@@ -494,250 +359,22 @@ public class CsvReader : MonoBehaviour
             AbdomenPlaneRotZ = abdomenPlaneRotZ,
             FemurPlaneRotZ = femurPlaneRotZ
         };
-        //bool endOfFile = false;
-
-        //while (!endOfFile)
-        //{
-        //    string currentLineOfFile = streamReader.ReadLine();
-
-        //    if (currentLineOfFile == null)
-        //    {
-        //        endOfFile = true;
-        //        break;
-        //    }
-
-        //    var valuesOfCurrentLine = currentLineOfFile.Split(',');
-        //}
     }
-
-    //private void ReadCsv()
-    //{
-    //    TextAsset file = Resources.Load<TextAsset>("StandardPlanes_and_Cube_Locations");
-    //    string[] lines = Regex.Split(file.text, lineSplitRegex);
-    //    headPlaneX = 0;
-    //    abdomenPlaneX = 0f;
-    //    femurPlaneX = 0f;
-
-    //    headPlaneY = 0f;
-    //    abdomenPlaneY = 0f;
-    //    femurPlaneY = 0f;
-
-    //    headPlaneZ = 0f;
-    //    abdomenPlaneZ = 0f;
-    //    femurPlaneZ = 0f;
-
-    //    headPlaneRotX = 0f;
-    //    abdomenPlaneRotX = 0f;
-    //    femurPlaneRotX = 0f;
-
-    //    headPlaneRotY = 0f;
-    //    abdomenPlaneRotY = 0f;
-    //    femurPlaneRotY = 0f;
-
-    //    headPlaneRotZ = 0f;
-    //    abdomenPlaneRotZ = 0f;
-    //    femurPlaneRotZ = 0f;
-
-    //    cubeX = 0f;
-    //    cubeY = 0f;
-    //    cubeZ = 0f;
-    //    cubeRotX = 0f;
-    //    cubeRotY = 0f;
-    //    cubeRotZ = 0f;
-
-    //    // Skip the header line of the .csv file.
-    //    for (int i = 1; i < lines.Length; i++)
-    //    {
-    //        var currentSplitLine = lines[i].Split(',');
-
-    //        if (currentSplitLine[0] == "pos_x")
-    //        {
-    //            if (!float.TryParse(currentSplitLine[1].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out headPlaneX))
-    //            {
-    //                headPlaneX = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[2].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out abdomenPlaneX))
-    //            {
-    //                abdomenPlaneX = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[3].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out femurPlaneX))
-    //            {
-    //                femurPlaneX = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out cubeX))
-    //            {
-    //                cubeX = 0;
-    //            }
-    //        }
-    //        else if (currentSplitLine[0] == "pos_y")
-    //        {
-    //            if (!float.TryParse(currentSplitLine[1].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out headPlaneY))
-    //            {
-    //                headPlaneY = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[2].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out abdomenPlaneY))
-    //            {
-    //                abdomenPlaneY = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[3].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out femurPlaneY))
-    //            {
-    //                femurPlaneY = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out cubeY))
-    //            {
-    //                cubeY = 0;
-    //            }
-    //        }
-    //        else if (currentSplitLine[0] == "pos_z")
-    //        {
-    //            if (!float.TryParse(currentSplitLine[1].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out headPlaneZ))
-    //            {
-    //                headPlaneZ = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[2].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out abdomenPlaneZ))
-    //            {
-    //                abdomenPlaneZ = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[3].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out femurPlaneZ))
-    //            {
-    //                femurPlaneZ = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out cubeZ))
-    //            {
-    //                cubeZ = 0;
-    //            }
-    //        }
-    //        else if (currentSplitLine[0] == "rot_x")
-    //        {
-    //            if (!float.TryParse(currentSplitLine[1].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out headPlaneRotX))
-    //            {
-    //                headPlaneRotX = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[2].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out abdomenPlaneRotX))
-    //            {
-    //                abdomenPlaneRotX = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[3].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out femurPlaneRotX))
-    //            {
-    //                femurPlaneRotX = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out cubeRotX))
-    //            {
-    //                cubeRotX = 0;
-    //            }
-    //        }
-    //        else if (currentSplitLine[0] == "rot_y")
-    //        {
-    //            if (!float.TryParse(currentSplitLine[1].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out headPlaneRotY))
-    //            {
-    //                headPlaneRotY = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[2].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out abdomenPlaneRotY))
-    //            {
-    //                abdomenPlaneRotY = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[3].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out femurPlaneRotY))
-    //            {
-    //                femurPlaneRotY = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out cubeRotY))
-    //            {
-    //                cubeRotY = 0;
-    //            }
-    //        }
-    //        else if (currentSplitLine[0] == "rot_z")
-    //        {
-    //            if (!float.TryParse(currentSplitLine[1].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out headPlaneRotZ))
-    //            {
-    //                headPlaneRotZ = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[2].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out abdomenPlaneRotZ))
-    //            {
-    //                abdomenPlaneRotZ = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[3].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out femurPlaneRotZ))
-    //            {
-    //                femurPlaneRotZ = 0;
-    //            }
-
-    //            if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out cubeRotZ))
-    //            {
-    //                cubeRotZ = 0;
-    //            }
-    //        }
-    //    }
-
-    //    standardPlaneLocations = new StandardPlaneLocations
-    //    {
-    //        HeadPlaneX = headPlaneX,
-    //        AbdomenPlaneX = abdomenPlaneX,
-    //        FemurPlaneX = femurPlaneX,
-    //        HeadPlaneY = headPlaneY,
-    //        AbdomenPlaneY = abdomenPlaneY,
-    //        FemurPlaneY = femurPlaneY,
-    //        HeadPlaneZ = headPlaneZ,
-    //        AbdomenPlaneZ = abdomenPlaneZ,
-    //        FemurPlaneZ = femurPlaneZ,
-    //        HeadPlaneRotX = headPlaneRotX,
-    //        AbdomenPlaneRotX = abdomenPlaneRotX,
-    //        FemurPlaneRotX = femurPlaneRotX,
-    //        HeadPlaneRotY = headPlaneRotY,
-    //        AbdomenPlaneRotY = abdomenPlaneRotY,
-    //        FemurPlaneRotY = femurPlaneRotY,
-    //        HeadPlaneRotZ = headPlaneRotZ,
-    //        AbdomenPlaneRotZ = abdomenPlaneRotZ,
-    //        FemurPlaneRotZ = femurPlaneRotZ
-    //    };
-    //    //bool endOfFile = false;
-
-    //    //while (!endOfFile)
-    //    //{
-    //    //    string currentLineOfFile = streamReader.ReadLine();
-
-    //    //    if (currentLineOfFile == null)
-    //    //    {
-    //    //        endOfFile = true;
-    //    //        break;
-    //    //    }
-
-    //    //    var valuesOfCurrentLine = currentLineOfFile.Split(',');
-    //    //}
-    //}
-
 
     public void PlaceStandardPlanes()
     {
-        //headStandardPlane.transform.localScale = new Vector3(rootObj.transform.lossyScale.x, rootObj.transform.lossyScale.y, rootObj.transform.lossyScale.z);
         headStandardPlane.transform.localPosition = new Vector3(headPlaneX, headPlaneY, headPlaneZ);
         headStandardPlane.transform.localRotation = new Quaternion(headPlaneRotX, headPlaneRotY, headPlaneRotZ, headPlaneRotW);
-        //Quaternion.Euler(new Vector3(headPlaneRotX, headPlaneRotY, headPlaneRotZ));
 
         EulerRotationX = headStandardPlane.transform.localRotation.x;
         EulerRotationY = headStandardPlane.transform.localRotation.y;
         EulerRotationZ = headStandardPlane.transform.localRotation.z;
 
         abdomenStandardPlane.transform.localPosition = new Vector3(abdomenPlaneX, abdomenPlaneY, abdomenPlaneZ);
-        abdomenStandardPlane.transform.localRotation = new Quaternion(abdomenPlaneRotX, abdomenPlaneRotY, abdomenPlaneRotZ, abdomenPlaneRotW);//Quaternion.Euler(new Vector3(abdomenPlaneRotX, abdomenPlaneRotY, abdomenPlaneRotZ));
+        abdomenStandardPlane.transform.localRotation = new Quaternion(abdomenPlaneRotX, abdomenPlaneRotY, abdomenPlaneRotZ, abdomenPlaneRotW);
 
         femurStandardPlane.transform.localPosition = new Vector3(femurPlaneX, femurPlaneY, femurPlaneZ);
-        femurStandardPlane.transform.localRotation = new Quaternion(femurPlaneRotX, femurPlaneRotY, femurPlaneRotZ, femurPlaneRotW);//new Quaternion(headPlaneRotX, headPlaneRotY, headPlaneRotZ, 1);//Quaternion.Euler(new Vector3(femurPlaneRotX, femurPlaneRotY, femurPlaneRotZ));
+        femurStandardPlane.transform.localRotation = new Quaternion(femurPlaneRotX, femurPlaneRotY, femurPlaneRotZ, femurPlaneRotW);
     }
 
     public void PlaceCube()
@@ -756,8 +393,6 @@ public class CsvReader : MonoBehaviour
 
         probeSidedEdgeLineOfUsImage.AddComponent<MeshRenderer>();
 
-        
-        
         LineRenderer probeSidedEdgeOfUSPlane = probeSidedEdgeLineOfUsImage.AddComponent<LineRenderer>();
 
         probeSidedEdgeOfUSPlane.transform.parent = babyModel.transform;
@@ -777,8 +412,6 @@ public class CsvReader : MonoBehaviour
 
     void GetVertices(GameObject planeObject)
     {
-       // CurrentGameObject = planeObject;
-
         // Probe plane
         LocalVerticesProbePlane = new List<Vector3>(planeObject.GetComponent<MeshFilter>().mesh.vertices);
         GlobalVerticesProbePlane.Clear();

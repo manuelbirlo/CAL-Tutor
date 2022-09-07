@@ -99,7 +99,7 @@ public class CsvWriter : MonoBehaviour
         //    }
         //}
 
-        using (StreamWriter strWriter = new StreamWriter("Assets/StandardPlanes_and_Cube_Locations - Copy.csv"))
+        using (StreamWriter strWriter = new StreamWriter("Assets/GameObjectLocations.csv"))
         {
             //foreach (var keyValuePair in parsedLines)
             //{
