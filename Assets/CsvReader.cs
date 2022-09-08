@@ -55,6 +55,14 @@ public class CsvReader : MonoBehaviour
     public float EulerRotationY;
     public float EulerRotationZ;
 
+    public float probeX;
+    public float probeY;
+    public float probeZ;
+    public float probeRotX;
+    public float probeRotY;
+    public float probeRotZ;
+    public float probeRotW;
+
     private bool lineRenderingEnabled = false;
     private bool disableProbeSidedLanes = true;
 
@@ -70,6 +78,7 @@ public class CsvReader : MonoBehaviour
     GameObject abdomenStandardPlane;
     GameObject femurStandardPlane;
     public GameObject cube;
+    public GameObject probe;
 
     public GameObject babyModel;
 
@@ -86,37 +95,39 @@ public class CsvReader : MonoBehaviour
         abdomenStandardPlane = GameObject.Find("AbdomenPlane");
         femurStandardPlane = GameObject.Find("FemurPlane");
         cube = GameObject.Find("CubeRelativeToProbe");
+        probe = GameObject.Find("GE_Voluson_2D_aligned");
 
         ReadCsv();
         PlaceStandardPlanes();
         PlaceCube();
+        PlaceCube();
 
-        CreateProbeSidedEdgeLinesForAllStandardPlanes(headStandardPlane, 1);
-        CreateProbeSidedEdgeLinesForAllStandardPlanes(abdomenStandardPlane, 2);
-        CreateProbeSidedEdgeLinesForAllStandardPlanes(femurStandardPlane, 3);
+        //CreateProbeSidedEdgeLinesForAllStandardPlanes(headStandardPlane, 1);
+        //CreateProbeSidedEdgeLinesForAllStandardPlanes(abdomenStandardPlane, 2);
+        //CreateProbeSidedEdgeLinesForAllStandardPlanes(femurStandardPlane, 3);
 
-        createdProbeSidedLines = GameObject.FindGameObjectsWithTag("ProbeSidedLine");
-        createdPlanes = GameObject.FindGameObjectsWithTag("StandardPlane");
-        lineRenderingEnabled = true;
+        //createdProbeSidedLines = GameObject.FindGameObjectsWithTag("ProbeSidedLine");
+        //createdPlanes = GameObject.FindGameObjectsWithTag("StandardPlane");
+        //lineRenderingEnabled = true;
     }
 
     void Update()
     {
-        if (lineRenderingEnabled && !interactableOfCheckBox.IsToggled)
-        {
-            for (int i = 0; i < createdProbeSidedLines.Length; i++)
-            {
-                var currentLine = createdProbeSidedLines[i];
-                var currentPlane = createdPlanes[i];
+        //if (lineRenderingEnabled && !interactableOfCheckBox.IsToggled)
+        //{
+        //    for (int i = 0; i < createdProbeSidedLines.Length; i++)
+        //    {
+        //        var currentLine = createdProbeSidedLines[i];
+        //        var currentPlane = createdPlanes[i];
 
-                var lineRenderer = currentLine.GetComponent<LineRenderer>();
+        //        var lineRenderer = currentLine.GetComponent<LineRenderer>();
 
-                GetVertices(currentPlane);
+        //        GetVertices(currentPlane);
 
-                lineRenderer.SetPosition(0, CornerVerticesProbePlane[0]);
-                lineRenderer.SetPosition(1, CornerVerticesProbePlane[1]);
-            }  
-        }
+        //        lineRenderer.SetPosition(0, CornerVerticesProbePlane[0]);
+        //        lineRenderer.SetPosition(1, CornerVerticesProbePlane[1]);
+        //    }  
+        //}
     }
 
     public void DeactivateLineRendering()
@@ -165,6 +176,13 @@ public class CsvReader : MonoBehaviour
             cubeRotY = 0f;
             cubeRotZ = 0f;
 
+            probeX = 0f;
+            probeY = 0f;
+            probeZ = 0f;
+            probeRotX = 0f;
+            probeRotY = 0f;
+            probeRotZ = 0f;
+
             bool endOfFile = false;
 
             string currentLine;
@@ -202,6 +220,11 @@ public class CsvReader : MonoBehaviour
                     {
                         cubeX = 0;
                     }
+
+                    if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out probeX))
+                    {
+                        probeX = 0;
+                    }
                 }
                 else if (currentSplitLine[0] == "pos_y")
                 {
@@ -223,6 +246,11 @@ public class CsvReader : MonoBehaviour
                     if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out cubeY))
                     {
                         cubeY = 0;
+                    }
+
+                    if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out probeY))
+                    {
+                        probeY = 0;
                     }
                 }
                 else if (currentSplitLine[0] == "pos_z")
@@ -246,6 +274,11 @@ public class CsvReader : MonoBehaviour
                     {
                         cubeZ = 0;
                     }
+
+                    if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out probeZ))
+                    {
+                        probeZ = 0;
+                    }
                 }
                 else if (currentSplitLine[0] == "rot_x")
                 {
@@ -267,6 +300,11 @@ public class CsvReader : MonoBehaviour
                     if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out cubeRotX))
                     {
                         cubeRotX = 0;
+                    }
+
+                    if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out probeRotX))
+                    {
+                        probeRotX = 0;
                     }
                 }
                 else if (currentSplitLine[0] == "rot_y")
@@ -290,6 +328,11 @@ public class CsvReader : MonoBehaviour
                     {
                         cubeRotY = 0;
                     }
+
+                    if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out probeRotY))
+                    {
+                        probeRotY = 0;
+                    }
                 }
                 else if (currentSplitLine[0] == "rot_z")
                 {
@@ -312,6 +355,11 @@ public class CsvReader : MonoBehaviour
                     {
                         cubeRotZ = 0;
                     }
+
+                    if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out probeRotZ))
+                    {
+                        probeRotZ = 0;
+                    }
                 }
                 else if (currentSplitLine[0] == "rot_w")
                 {
@@ -333,6 +381,11 @@ public class CsvReader : MonoBehaviour
                     if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out cubeRotW))
                     {
                         cubeRotW = 0;
+                    }
+
+                    if (!float.TryParse(currentSplitLine[4].Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out probeRotW))
+                    {
+                        probeRotW = 0;
                     }
                 }
             }
@@ -381,6 +434,12 @@ public class CsvReader : MonoBehaviour
     {
         cube.transform.localPosition = new Vector3(cubeX, cubeY, cubeZ);
         cube.transform.localRotation = new Quaternion(cubeRotX, cubeRotY, cubeRotZ, cubeRotW);
+    }
+
+    public void PlaceProbe()
+    {
+        probe.transform.localPosition = new Vector3(probeX, probeY, probeZ);
+        probe.transform.localRotation = new Quaternion(probeRotX, probeRotY, probeRotZ, probeRotW);
     }
 
     void CreateProbeSidedEdgeLinesForAllStandardPlanes(GameObject standardPlane, int identifier)

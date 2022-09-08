@@ -36,13 +36,23 @@ public class ProbeSidedLanesManager : MonoBehaviour
 
     public void ActivateProbeSidedEdges()
     {
-        probeSidedLane1 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_1").gameObject;
-        probeSidedLane2 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_2").gameObject;
-        probeSidedLane3 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_3").gameObject;
+        if (babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_1") != null)
+        {
+            probeSidedLane1 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_1").gameObject;
+            probeSidedLane1.SetActive(true);
+        }
 
-        probeSidedLane1.SetActive(true);
-        probeSidedLane2.SetActive(true);
-        probeSidedLane3.SetActive(true);
+        if (babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_2") != null)
+        {
+            probeSidedLane2 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_2").gameObject;
+            probeSidedLane2.SetActive(true);
+        }
+
+        if (babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_3") != null)
+        {
+            probeSidedLane3 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_3").gameObject;
+            probeSidedLane3.SetActive(true);
+        }
         //createdProbeSidedLines = GameObject.FindGameObjectsWithTag("ProbeSidedLine");
 
         //foreach (var probeSidedLane in createdProbeSidedLines)
@@ -57,14 +67,24 @@ public class ProbeSidedLanesManager : MonoBehaviour
 
     public void DeactivateProbeSidedEdges()
     {
-        //createdProbeSidedLines = GameObject.FindGameObjectsWithTag("ProbeSidedLine");
-        probeSidedLane1 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_1").gameObject;
-        probeSidedLane2 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_2").gameObject;
-        probeSidedLane3 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_3").gameObject;
+      
+        if (babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_1") != null)
+        {
+            probeSidedLane1 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_1").gameObject;
+            probeSidedLane1.SetActive(false);
+        }
 
-        probeSidedLane1.SetActive(false);
-        probeSidedLane2.SetActive(false);
-        probeSidedLane3.SetActive(false);
+        if (babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_2") != null)
+        {
+            probeSidedLane2 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_2").gameObject;
+            probeSidedLane2.SetActive(false);
+        }
+
+        if (babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_3") != null)
+        {
+            probeSidedLane3 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_3").gameObject;
+            probeSidedLane3.SetActive(false);
+        }
     }
 
     //void CreateProbeSidedEdgeLinesForAllStandardPlanes(GameObject standardPlane, int identifier)
