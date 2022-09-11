@@ -102,36 +102,36 @@ public class CloneGameObjects : MonoBehaviour
         duplicate.transform.parent = babyModel.transform;
 
         // ----------- Creation of probe sided edge Line ------------------------------------------------------------------------------
-        probeSidedEdgeLineOfUsImage = new GameObject();
-        probeSidedEdgeLineOfUsImage.name = "ProbeSidedEdgeLine_CloneUSPlane" + imageCounter; 
-        probeSidedEdgeLineOfUsImage.tag = "ProbeSidedLine";
-        probeSidedEdgeLineOfUsImage.AddComponent<MeshFilter>();
+        //probeSidedEdgeLineOfUsImage = new GameObject();
+        //probeSidedEdgeLineOfUsImage.name = "ProbeSidedEdgeLine_CloneUSPlane" + imageCounter; 
+        //probeSidedEdgeLineOfUsImage.tag = "ProbeSidedLine";
+        //probeSidedEdgeLineOfUsImage.AddComponent<MeshFilter>();
 
-        probeSidedEdgeLineOfUsImage.AddComponent<MeshRenderer>();
-        //probeSidedEdgeLineOfUsImage.AddComponent<BoxCollider>();
+        //probeSidedEdgeLineOfUsImage.AddComponent<MeshRenderer>();
+        ////probeSidedEdgeLineOfUsImage.AddComponent<BoxCollider>();
 
-        probeSidedEdgeOfUSPlane = probeSidedEdgeLineOfUsImage.AddComponent<LineRenderer>();
+        //probeSidedEdgeOfUSPlane = probeSidedEdgeLineOfUsImage.AddComponent<LineRenderer>();
        
-        probeSidedEdgeOfUSPlane.gameObject.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
-        probeSidedEdgeOfUSPlane.SetWidth(0.01F, 0.01F);
-        probeSidedEdgeOfUSPlane.SetVertexCount(2);
-
-        //probeSidedEdgeOfUSPlane = duplicate.AddComponent<LineRenderer>();
         //probeSidedEdgeOfUSPlane.gameObject.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
         //probeSidedEdgeOfUSPlane.SetWidth(0.01F, 0.01F);
         //probeSidedEdgeOfUSPlane.SetVertexCount(2);
 
-        CornerVerticesProbePlane = new List<Vector3>();
-        LocalVerticesProbePlane = new List<Vector3>();
-        GlobalVerticesProbePlane = new List<Vector3>();
+        ////probeSidedEdgeOfUSPlane = duplicate.AddComponent<LineRenderer>();
+        ////probeSidedEdgeOfUSPlane.gameObject.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
+        ////probeSidedEdgeOfUSPlane.SetWidth(0.01F, 0.01F);
+        ////probeSidedEdgeOfUSPlane.SetVertexCount(2);
 
-        GetVertices(rootObj);
-        probeSidedEdgeOfUSPlane.SetPosition(0, CornerVerticesProbePlane[0]);
-        probeSidedEdgeOfUSPlane.SetPosition(1, CornerVerticesProbePlane[1]);
+        //CornerVerticesProbePlane = new List<Vector3>();
+        //LocalVerticesProbePlane = new List<Vector3>();
+        //GlobalVerticesProbePlane = new List<Vector3>();
 
-        //AddColliderToLine(probeSidedEdgeOfUSPlane, CornerVerticesProbePlane[0], CornerVerticesProbePlane[1]);
+        //GetVertices(rootObj);
+        //probeSidedEdgeOfUSPlane.SetPosition(0, CornerVerticesProbePlane[0]);
+        //probeSidedEdgeOfUSPlane.SetPosition(1, CornerVerticesProbePlane[1]);
 
-        lineRenderingEnabled = true;
+        ////AddColliderToLine(probeSidedEdgeOfUSPlane, CornerVerticesProbePlane[0], CornerVerticesProbePlane[1]);
+
+        //lineRenderingEnabled = true;
 
         //probeSidedEdgeLineOfUsImage.AddComponent<MeshCollider>();
 
@@ -249,15 +249,15 @@ public class CloneGameObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (lineRenderingEnabled)
-        {
-            LinePosOne = CornerVerticesProbePlane[0];
-            LinePosTwo = CornerVerticesProbePlane[1];
+        //if (lineRenderingEnabled)
+        //{
+        //    LinePosOne = CornerVerticesProbePlane[0];
+        //    LinePosTwo = CornerVerticesProbePlane[1];
 
-            GetVertices(duplicate);
-            probeSidedEdgeOfUSPlane.SetPosition(0, CornerVerticesProbePlane[0]);
-            probeSidedEdgeOfUSPlane.SetPosition(1, CornerVerticesProbePlane[1]);
-        }
+        //    GetVertices(duplicate);
+        //    probeSidedEdgeOfUSPlane.SetPosition(0, CornerVerticesProbePlane[0]);
+        //    probeSidedEdgeOfUSPlane.SetPosition(1, CornerVerticesProbePlane[1]);
+        //}
     }
 
     //public void VideoPreparation(string path_)
