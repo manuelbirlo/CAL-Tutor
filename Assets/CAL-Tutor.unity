@@ -1650,6 +1650,7 @@ MonoBehaviour:
   imageCounter: 0
   lineRenderingEnabled: 0
   CornerVerticesProbePlane: []
+  mirroredPlaneObject: {fileID: 0}
 --- !u!64 &103124126
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4533,6 +4534,7 @@ MonoBehaviour:
   imageCounter: 0
   lineRenderingEnabled: 0
   CornerVerticesProbePlane: []
+  mirroredPlaneObject: {fileID: 0}
 --- !u!64 &266552630
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5392,17 +5394,17 @@ PrefabInstance:
     - target: {fileID: 911119102589454205, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 911119102589454205, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 911119102589454205, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 911119102589454205, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
@@ -5462,7 +5464,7 @@ PrefabInstance:
     - target: {fileID: 911119103730012268, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
       propertyPath: m_text
-      value: Reached 2nd target plane?
+      value: Reached abdomen plane?
       objectReference: {fileID: 0}
     - target: {fileID: 911119103730012268, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
@@ -5483,6 +5485,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 911119103730012271, guid: 09b08eb44d9af864b9f1a9ae11701b10,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 911119104182763932, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
@@ -8954,6 +8961,7 @@ MonoBehaviour:
   imageCounter: 0
   lineRenderingEnabled: 0
   CornerVerticesProbePlane: []
+  mirroredPlaneObject: {fileID: 0}
 --- !u!328 &468290059
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -12915,7 +12923,7 @@ GameObject:
   - component: {fileID: 702649637}
   - component: {fileID: 702649636}
   m_Layer: 0
-  m_Name: 'FemurLabelForUsImage '
+  m_Name: FemurLabelForUsImage
   m_TagString: USPlaneLabel3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15920,6 +15928,7 @@ MonoBehaviour:
   imageCounter: 0
   lineRenderingEnabled: 0
   CornerVerticesProbePlane: []
+  mirroredPlaneObject: {fileID: 0}
 --- !u!64 &840007238
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17104,17 +17113,17 @@ PrefabInstance:
     - target: {fileID: 911119102589454205, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 911119102589454205, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 911119102589454205, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 911119102589454205, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
@@ -17179,7 +17188,7 @@ PrefabInstance:
     - target: {fileID: 911119103730012268, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
       propertyPath: m_text
-      value: Reached 1st target plane?
+      value: Reached head plane?
       objectReference: {fileID: 0}
     - target: {fileID: 911119103730012268, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
@@ -19319,8 +19328,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2109402001}
-  - {fileID: 1776380273}
   - {fileID: 1450959804}
+  - {fileID: 1776380273}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
@@ -20495,6 +20504,7 @@ MonoBehaviour:
   imageCounter: 0
   lineRenderingEnabled: 0
   CornerVerticesProbePlane: []
+  mirroredPlaneObject: {fileID: 0}
 --- !u!64 &1195741528
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22580,6 +22590,7 @@ MonoBehaviour:
   imageCounter: 0
   lineRenderingEnabled: 0
   CornerVerticesProbePlane: []
+  mirroredPlaneObject: {fileID: 0}
 --- !u!64 &1331946715
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22876,17 +22887,17 @@ PrefabInstance:
     - target: {fileID: 911119102589454205, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 911119102589454205, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 911119102589454205, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 911119102589454205, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
@@ -22946,7 +22957,7 @@ PrefabInstance:
     - target: {fileID: 911119103730012268, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
       propertyPath: m_text
-      value: Reached 3rd target plane?
+      value: Reached femur plane?
       objectReference: {fileID: 0}
     - target: {fileID: 911119103730012268, guid: 09b08eb44d9af864b9f1a9ae11701b10,
         type: 3}
@@ -24940,7 +24951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4d48c217765fe4241bc9579955acde2f, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4d48c217765fe4241bc9579955acde2f, type: 3}
       propertyPath: m_LocalScale.x
@@ -24948,11 +24959,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4d48c217765fe4241bc9579955acde2f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.05000002
+      value: 0.050000027
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4d48c217765fe4241bc9579955acde2f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.05000002
+      value: 0.050000027
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4d48c217765fe4241bc9579955acde2f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28165,7 +28176,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d3a43e8ed75b4bb4ea99a124b3ab89eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d3a43e8ed75b4bb4ea99a124b3ab89eb,
         type: 3}
@@ -31206,6 +31217,7 @@ MonoBehaviour:
   imageCounter: 0
   lineRenderingEnabled: 0
   CornerVerticesProbePlane: []
+  mirroredPlaneObject: {fileID: 0}
 --- !u!64 &1715065648
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31428,6 +31440,7 @@ MonoBehaviour:
   imageCounter: 0
   lineRenderingEnabled: 0
   CornerVerticesProbePlane: []
+  mirroredPlaneObject: {fileID: 0}
 --- !u!114 &1715803120
 MonoBehaviour:
   m_ObjectHideFlags: 0

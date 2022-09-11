@@ -48,6 +48,8 @@ public class CloneGameObjects : MonoBehaviour
 
     List<int> CornerIDs = new List<int> { 0, 10, 110, 120 };
 
+    public Transform mirroredPlaneObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -136,7 +138,6 @@ public class CloneGameObjects : MonoBehaviour
         // ---------------------------------------------------------------------------------------------------
 
         imageCounter++;
-
         videoPlayer = rootObj.GetComponent<VideoPlayer>();
 
         rend = duplicate.GetComponent<Renderer>();
@@ -163,6 +164,7 @@ public class CloneGameObjects : MonoBehaviour
 
         if (mirroredPlane.name == "HeadPlaneMirrored")
         {
+            mirroredPlaneObject = mirroredPlane.transform.FindChild("HeadLabelForUsImage");
             textLabel = mirroredPlane.transform.FindChild("HeadLabelForUsImage").gameObject;
             textLabel.SetActive(false);
         }
@@ -173,7 +175,9 @@ public class CloneGameObjects : MonoBehaviour
         }
         else if (mirroredPlane.name == "FemurPlaneMirrored")
         {
+            
             textLabel = mirroredPlane.transform.FindChild("FemurLabelForUsImage").gameObject;
+           
             textLabel.SetActive(false);
         }
 

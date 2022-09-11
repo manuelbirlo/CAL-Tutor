@@ -233,8 +233,6 @@ public class PlaneNavigation : MonoBehaviour
         // Set the number of vertex fo the Line Renderer
         line.SetVertexCount(2);
         */
-
-        UnityEngine.Debug.Log("2");
     }
 
     void OnDisable()
@@ -264,10 +262,8 @@ public class PlaneNavigation : MonoBehaviour
         // Check if the GameObjects are not null
         if (ultrasoundPlaneOfProbe != null && targetUltrasoundPlane != null)
         {
-            UnityEngine.Debug.Log("3");
-
-            TimeSpan timeSpan = stopWatch.Elapsed;
-            elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds / 10);
+            //TimeSpan timeSpan = stopWatch.Elapsed;
+            //elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds / 10);
 
             //LocalVerticesProbePlane.Clear();
             //CornerVerticesTargetPlane.Clear();

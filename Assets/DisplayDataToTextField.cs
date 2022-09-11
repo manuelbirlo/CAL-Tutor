@@ -1,13 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Diagnostics;
 
 public class DisplayDataToTextField : MonoBehaviour
 {
     //public GameObject textField;
-
+    private Stopwatch stopWatch;
     private PlaneDistanceInformation planeDistanceInformation;
     private PlaneNavigation planeNavigation;
 
@@ -38,6 +40,9 @@ public class DisplayDataToTextField : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
+        stopWatch = new Stopwatch();
+        stopWatch.Start();
+
         planeDistanceInformation = gameObject.GetComponent<PlaneDistanceInformation>();
         //planeNavigation = gameObject.GetComponent<PlaneNavigation>();
         var targetPlaneNavigationButtons = GameObject.FindGameObjectsWithTag("NavigateToTargetPlaneButton");
@@ -67,7 +72,7 @@ public class DisplayDataToTextField : MonoBehaviour
         // -----------------------------------------------------------------------
 
         //elapsedTime = targetPlaneNavigationButton.GetComponent<PlaneNavigation>().elapsedTime;
-        elapsedTime = planeNavigation.elapsedTime;
+        //elapsedTime = planeNavigation.elapsedTime;
 
         //gameObject.GetComponent<TextMeshPro>().text = planeDistanceInformation.xDifference.ToString("0.00");
         xDifferenceTextField.GetComponent<TextMeshProUGUI>().text = planeDistanceInformation.xDifference.ToString("0.00");
@@ -78,6 +83,9 @@ public class DisplayDataToTextField : MonoBehaviour
         yRotationDifferenceTextField.GetComponent<TextMeshProUGUI>().text = planeDistanceInformation.yRotationDifference.ToString("0.00");
         zRotationDifferenceTextField.GetComponent<TextMeshProUGUI>().text = planeDistanceInformation.zRotationDifference.ToString("0.00");
 
-        elapsedTimeTextField.GetComponent<TextMeshProUGUI>().text = planeNavigation.elapsedTime;
+        TimeSpan timeSpan = stopWatch.Elapsed;
+        elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds / 10);
+
+        elapsedTimeTextField.GetComponent<TextMeshProUGUI>().text = elapsedTime;
     }
 }
