@@ -411,7 +411,7 @@ MonoBehaviour:
   rotateLerpTime: 0.001
   scaleLerpTime: 0.001
   enableConstraints: 1
-  constraintsManager: {fileID: 0}
+  constraintsManager: {fileID: 13851621}
   elasticsManager: {fileID: 0}
   onManipulationStarted:
     m_PersistentCalls:
@@ -13490,17 +13490,17 @@ PrefabInstance:
     - target: {fileID: 5563659785885695806, guid: c2016a6d52b18854fb6b811a95af4275,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5563659785885695806, guid: c2016a6d52b18854fb6b811a95af4275,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5563659785885695806, guid: c2016a6d52b18854fb6b811a95af4275,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5563659785885695806, guid: c2016a6d52b18854fb6b811a95af4275,
         type: 3}
@@ -13952,6 +13952,12 @@ MonoBehaviour:
   showHandleForX: 1
   showHandleForY: 1
   showHandleForZ: 1
+--- !u!1 &661341020 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9199859961106119843, guid: c2016a6d52b18854fb6b811a95af4275,
+    type: 3}
+  m_PrefabInstance: {fileID: 590664901}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &701938177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29929,6 +29935,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 491e20bc6521959488c88519331a9f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1589075508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589075503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a391d1015c0fb8d44954a499bfb2fd9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentObject: {fileID: 661341020}
 --- !u!1 &1621008456 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7534510045860620726, guid: 0afe33902d7106d429dc17070455cf15,
@@ -30096,7 +30115,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 590664901}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 661341020}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4684083f6dff4a1d8a790bccc354fcf4, type: 3}
@@ -37602,22 +37621,27 @@ PrefabInstance:
     - target: {fileID: 586303850521236049, guid: 9215a7c858170d74fb2257375d5feaf1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.56
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 586303850521236049, guid: 9215a7c858170d74fb2257375d5feaf1,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.56
+      value: 1.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 586303850521236049, guid: 9215a7c858170d74fb2257375d5feaf1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 586303850521236049, guid: 9215a7c858170d74fb2257375d5feaf1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0042666597
+      value: 0.0042666574
       objectReference: {fileID: 0}
     - target: {fileID: 586303850521236049, guid: 9215a7c858170d74fb2257375d5feaf1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.12473334
+      value: 0.12473335
       objectReference: {fileID: 0}
     - target: {fileID: 586303850521236049, guid: 9215a7c858170d74fb2257375d5feaf1,
         type: 3}
@@ -38307,7 +38331,7 @@ PrefabInstance:
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
       propertyPath: Events.Array.data[2].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
@@ -38328,7 +38352,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Events.Array.data[2].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1589075508}
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
       propertyPath: Events.Array.data[2].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[2].m_Target
@@ -38367,7 +38391,7 @@ PrefabInstance:
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
       propertyPath: Events.Array.data[2].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: 
+      value: AddChild
       objectReference: {fileID: 0}
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
@@ -38412,7 +38436,7 @@ PrefabInstance:
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
       propertyPath: Events.Array.data[2].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: AddChildToParentGameObject, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
