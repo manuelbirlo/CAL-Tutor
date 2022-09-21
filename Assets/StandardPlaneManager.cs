@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Microsoft.MixedReality.Toolkit.UI;
 
 public class StandardPlaneManager : MonoBehaviour
 {
@@ -81,6 +83,14 @@ public class StandardPlaneManager : MonoBehaviour
 
     public void TurnOnActiveStandardPlaneForNavigation()
     {
+        Interactable deactivateMRGuidanceToggleButton = GameObject.Find("DeactivateMRGuidance").GetComponent<Interactable>();
+
+        // Don't activate the standard plane visualisations if the DeactivateMRGuidance button is set to active.
+        if (deactivateMRGuidanceToggleButton.IsToggled == true)
+        {
+            return;
+        }
+
         lineRenderingEnabled = true;
 
         headStandardPlane = GameObject.Find("HeadPlane");
@@ -88,7 +98,7 @@ public class StandardPlaneManager : MonoBehaviour
         femurStandardPlane = GameObject.Find("FemurPlane");
 
         //csvReaderScript.ReactivateLineRendering();
-       
+
         if (activeStandardPlane == 1)
         {
             currentPlane = headStandardPlane;
@@ -147,6 +157,14 @@ public class StandardPlaneManager : MonoBehaviour
 
     public void DeactivateActiveStandardPlane()
     {
+        Interactable deactivateMRGuidanceToggleButton = GameObject.Find("DeactivateMRGuidance").GetComponent<Interactable>();
+
+        // Don't activate the standard plane visualisations if the DeactivateMRGuidance button is set to active.
+        if (deactivateMRGuidanceToggleButton.IsToggled == true)
+        {
+            return;
+        }
+
         lineRenderingEnabled = false;
 
         headStandardPlane = GameObject.Find("HeadPlane");
@@ -161,6 +179,13 @@ public class StandardPlaneManager : MonoBehaviour
             
             headStandardPlane.transform.Find("HeadLabelForUsImage").GetComponent<MeshRenderer>().enabled = false;
 
+            //var existingProbeSidedEdgeLine1 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_1");
+            //if (existingProbeSidedEdgeLine1 != null)
+            //{
+            //    var lineObject = existingProbeSidedEdgeLine1.gameObject;
+            //    Destroy(lineObject);
+            //}
+          
             babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_1").GetComponent<LineRenderer>().enabled = false;
 
         }
@@ -173,6 +198,11 @@ public class StandardPlaneManager : MonoBehaviour
             abdomenStandardPlane.transform.Find("AbdomenLabelForUsImage").GetComponent<MeshRenderer>().enabled = false;
 
             babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_2").GetComponent<LineRenderer>().enabled = false;
+            //var existingProbeSidedEdgeLine2 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_2");
+            //if (existingProbeSidedEdgeLine2 != null)
+            //{
+            //    Destroy(existingProbeSidedEdgeLine2.gameObject);
+            //}
         }
         else if (activeStandardPlane == 3)
         {
@@ -183,6 +213,11 @@ public class StandardPlaneManager : MonoBehaviour
             femurStandardPlane.transform.Find("FemurLabelForUsImage").GetComponent<MeshRenderer>().enabled = false;
 
             babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_3").GetComponent<LineRenderer>().enabled = false;
+            //var existingProbeSidedEdgeLine3 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_3");
+            //if (existingProbeSidedEdgeLine3 != null)
+            //{
+            //    Destroy(existingProbeSidedEdgeLine3.gameObject);
+            //}
         }
     }
 
@@ -293,6 +328,27 @@ public class StandardPlaneManager : MonoBehaviour
     void CreateProbeSidedEdgeLinesForAllStandardPlanes(GameObject standardPlane, int identifier)
     {
         // ----------- Creation of probe sided edge Line ------------------------------------------------------------------------------
+        //var existingProbeSidedEdgeLine = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_" + identifier);
+        //if (existingProbeSidedEdgeLine != null)
+        //{
+        //    Destroy(existingProbeSidedEdgeLine.gameObject);
+        //}
+        Interactable deactivateMRGuidanceToggleButton = GameObject.Find("DeactivateMRGuidance").GetComponent<Interactable>();
+
+        // Don't activate the standard plane visualisations if the DeactivateMRGuidance button is set to active.
+        if (deactivateMRGuidanceToggleButton.IsToggled == true)
+        {
+            return;
+        }
+
+        var existingProbeSidedEdgeLine = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_" + identifier);
+        if (existingProbeSidedEdgeLine != null)
+        {
+            babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_" + identifier).GetComponent<LineRenderer>().enabled = true;
+
+            return;
+        }
+
         var probeSidedEdgeLineOfUsImage = new GameObject();
         probeSidedEdgeLineOfUsImage.name = "ProbeSidedEdgeLine_CloneUSPlane_" + identifier;
         probeSidedEdgeLineOfUsImage.tag = "ProbeSidedLine";

@@ -167,6 +167,49 @@ public class ChangeVisibilityOfGameObject : MonoBehaviour
             Renderer c = (Renderer)b;
             c.enabled = true;
         }
+
+        var babyModel = GameObject.Find("BabyModel");
+
+        var headStandardPlane = GameObject.Find("HeadPlane");
+        var abdomenStandardPlane = GameObject.Find("AbdomenPlane");
+        var femurStandardPlane = GameObject.Find("FemurPlane");
+
+        headStandardPlane.GetComponent<MeshRenderer>().enabled = false;
+
+        headStandardPlane.transform.Find("HeadPlaneMirrored").GetComponent<MeshRenderer>().enabled = false;
+
+        headStandardPlane.transform.Find("HeadLabelForUsImage").GetComponent<MeshRenderer>().enabled = false;
+
+        if (babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_1") != null)
+        {
+            babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_1").GetComponent<LineRenderer>().enabled = false;
+        }
+
+        if (babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_2") != null)
+        {
+            babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_2").GetComponent<LineRenderer>().enabled = false;
+        }
+
+        if (babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_3") != null)
+        {
+            babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_3").GetComponent<LineRenderer>().enabled = false;
+        }
+
+        abdomenStandardPlane.GetComponent<MeshRenderer>().enabled = false;
+
+        abdomenStandardPlane.transform.Find("AbdomenPlaneMirrored").GetComponent<MeshRenderer>().enabled = false;
+
+        abdomenStandardPlane.transform.Find("AbdomenLabelForUsImage").GetComponent<MeshRenderer>().enabled = false;
+
+        
+
+        femurStandardPlane.GetComponent<MeshRenderer>().enabled = false;
+
+        femurStandardPlane.transform.Find("FemurPlaneMirrored").GetComponent<MeshRenderer>().enabled = false;
+
+        femurStandardPlane.transform.Find("FemurLabelForUsImage").GetComponent<MeshRenderer>().enabled = false;
+
+
     }
 
     public void MakeVisible()
@@ -264,9 +307,9 @@ public class ChangeVisibilityOfGameObject : MonoBehaviour
 
     public void DeactivePinnedUSPlaneIfPresent()
     {
-        var usPlane1 = GameObject.Find("USPlane1");
-        var usPlane2 = GameObject.Find("USPlane2");
-        var usPlane3 = GameObject.Find("USPlane3");
+        var usPlane1 = GameObject.Find("HeadPlane");
+        var usPlane2 = GameObject.Find("AbdomenPlane");
+        var usPlane3 = GameObject.Find("FemurPlane");
 
         var probeSidedPlane1 = GameObject.Find("ProbeSidedEdgeLine_CloneUSPlane1");
         var probeSidedPlane2 = GameObject.Find("ProbeSidedEdgeLine_CloneUSPlane2");
@@ -324,9 +367,9 @@ public class ChangeVisibilityOfGameObject : MonoBehaviour
 
     public void ActivePinnedUSPlaneIfPresent()
     {
-        var usPlane1 = GameObject.Find("USPlane1");
-        var usPlane2 = GameObject.Find("USPlane2");
-        var usPlane3 = GameObject.Find("USPlane3");
+        var usPlane1 = GameObject.Find("HeadPlane");
+        var usPlane2 = GameObject.Find("AbdomenPlane");
+        var usPlane3 = GameObject.Find("FemurPlane");
 
         var probeSidedPlane1 = GameObject.Find("ProbeSidedEdgeLine_CloneUSPlane1");
         var probeSidedPlane2 = GameObject.Find("ProbeSidedEdgeLine_CloneUSPlane2");

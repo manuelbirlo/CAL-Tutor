@@ -15151,12 +15151,12 @@ PrefabInstance:
         type: 3}
       propertyPath: Events.Array.data[2].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
-      objectReference: {fileID: 723107286}
+      objectReference: {fileID: 0}
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
       propertyPath: Events.Array.data[2].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
-      objectReference: {fileID: 723107286}
+      objectReference: {fileID: 0}
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
       propertyPath: Events.Array.data[2].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[8].m_Target
@@ -15250,12 +15250,12 @@ PrefabInstance:
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
       propertyPath: Events.Array.data[2].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
-      value: ActivePinnedUSPlaneIfPresent
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
       propertyPath: Events.Array.data[2].Settings.Array.data[0].EventValue.m_PersistentCalls.m_Calls.Array.data[7].m_MethodName
-      value: MakeArrowsVisible
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1138562410477700885, guid: 0afe33902d7106d429dc17070455cf15,
         type: 3}
