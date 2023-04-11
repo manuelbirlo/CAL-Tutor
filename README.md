@@ -22,7 +22,7 @@ During the navigation to the standard planes, holographic instruction cards can 
 During the navigation phase user motion data is being recorded that can be downloaded via the HoloLens device portal. 
 
 Please note: 
-The Unity project including the C# code scripts have been written in a short amount of time as part of a research project and should be cleaned up in future. 
+The Unity project has been written in a short amount of time as part of a research project and should be cleaned up in future. 
 This includes: 
 - Reorganizing Unity assets into meaningful folders
 - Clean up of C# scripts (remove code comments, clean up source code). 
