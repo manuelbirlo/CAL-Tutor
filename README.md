@@ -1,6 +1,6 @@
 # CAL-Tutor
 
-![Example Image](README_files/CAL-Tutor_workflow_overview.png)
+![Example Image](README_files/CAL-Tutor_graphical_workflow_overview.png)
 
 Our MDPI Journal of Imaging paper can be found here: [CAL-Tutor: A HoloLens 2 Application for Training in Obstetric Sonography and User Motion Data Recording](https://www.mdpi.com/2313-433X/9/1/6)
 
