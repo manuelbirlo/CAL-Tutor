@@ -8,7 +8,6 @@ using System.Diagnostics;
 
 public class DisplayDataToTextField : MonoBehaviour
 {
-    //public GameObject textField;
     private Stopwatch stopWatch;
     private PlaneDistanceInformation planeDistanceInformation;
     private PlaneNavigation planeNavigation;
@@ -22,8 +21,6 @@ public class DisplayDataToTextField : MonoBehaviour
     public string zRotationDifference;
 
     public string elapsedTime;
-
-    //public TextMeshPro textMesh;
 
     public GameObject xDifferenceTextField;
     public GameObject yDifferenceTextField;
@@ -44,7 +41,7 @@ public class DisplayDataToTextField : MonoBehaviour
         stopWatch.Start();
 
         planeDistanceInformation = gameObject.GetComponent<PlaneDistanceInformation>();
-        //planeNavigation = gameObject.GetComponent<PlaneNavigation>();
+       
         var targetPlaneNavigationButtons = GameObject.FindGameObjectsWithTag("NavigateToTargetPlaneButton");
 
         foreach (var button in targetPlaneNavigationButtons)
@@ -61,7 +58,6 @@ public class DisplayDataToTextField : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // --- Only for debugging -------------------------------------------------
         xDifference = planeDistanceInformation.xDifference.ToString("0.00");
         yDifference = planeDistanceInformation.yDifference.ToString("0.00");
         zDifference = planeDistanceInformation.zDifference.ToString("0.00");
@@ -69,12 +65,7 @@ public class DisplayDataToTextField : MonoBehaviour
         xRotationDifference = planeDistanceInformation.xRotationDifference.ToString("0.00");
         yRotationDifference = planeDistanceInformation.yRotationDifference.ToString("0.00");
         zRotationDifference = planeDistanceInformation.zRotationDifference.ToString("0.00");
-        // -----------------------------------------------------------------------
-
-        //elapsedTime = targetPlaneNavigationButton.GetComponent<PlaneNavigation>().elapsedTime;
-        //elapsedTime = planeNavigation.elapsedTime;
-
-        //gameObject.GetComponent<TextMeshPro>().text = planeDistanceInformation.xDifference.ToString("0.00");
+        
         xDifferenceTextField.GetComponent<TextMeshProUGUI>().text = planeDistanceInformation.xDifference.ToString("0.00");
         yDifferenceTextField.GetComponent<TextMeshProUGUI>().text = planeDistanceInformation.yDifference.ToString("0.00");
         zDifferenceTextField.GetComponent<TextMeshProUGUI>().text = planeDistanceInformation.zDifference.ToString("0.00");
