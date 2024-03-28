@@ -16,7 +16,6 @@ public class SaveAndLoadPlanes : MonoBehaviour
     public Quaternion localRot;
     public Transform TextLabel;
 
-    // This is our local private members 
     Rect _Save, _Load, _SaveMSG, _LoadMSG;
     bool _ShouldSave, _ShouldLoad, _SwitchSave, _SwitchLoad;
     public string _FileLocation, _FileName;
@@ -45,8 +44,6 @@ public class SaveAndLoadPlanes : MonoBehaviour
 
     List<int> CornerIDs = new List<int> { 0, 10, 110, 120 };
 
-    // When the EGO is instansiated the Start will trigger 
-    // so we setup our initial values for our local members 
     void Start()
     {
         imageCounter = 1;
@@ -55,17 +52,14 @@ public class SaveAndLoadPlanes : MonoBehaviour
         LocalVerticesProbePlane = new List<Vector3>();
         GlobalVerticesProbePlane = new List<Vector3>();
 
-        // We setup our rectangles for our messages 
         _Save = new Rect(10, 80, 100, 20);
         _Load = new Rect(10, 100, 100, 20);
         _SaveMSG = new Rect(10, 120, 400, 40);
         _LoadMSG = new Rect(10, 140, 400, 40);
 
-        // Where we want to save and load to and from 
         _FileLocation = Application.persistentDataPath;
         _FileName = "SaveData.xml";
 
-        // we need soemthing to store the information into 
         myData = new UserData();
     }
 
@@ -77,12 +71,7 @@ public class SaveAndLoadPlanes : MonoBehaviour
 
         var result = Resources.FindObjectsOfTypeAll(typeof(Plane));
         Debug.Log(" TYPE: " + result.GetType());
-        //foreach (Plane go in (Plane[])Resources.FindObjectsOfTypeAll(typeof(Plane)))
-        //{
-        //    //if (EditorUtility.IsPersistent(go.transform.root.gameObject) && !(go.hideFlags == HideFlags.NotEditable || go.hideFlags == HideFlags.HideAndDontSave))
-        //    objectsInScene.Add(go);
-        //}
-
+        
         return objectsInScene;
     }
 
@@ -96,20 +85,13 @@ public class SaveAndLoadPlanes : MonoBehaviour
             return;
         }
 
-        // Load our UserData into myData 
+        // Load UserData into myData 
         LoadXML();
-
-            //CornerVerticesProbePlane = new List<Vector3>();
-            //LocalVerticesProbePlane = new List<Vector3>();
-            //GlobalVerticesProbePlane = new List<Vector3>();
 
         if (_data.ToString() != "")
             {
                 myData = (UserData)DeserializeObject(_data);
-                // set the players position to the data we loaded 
-
-                //var duplicatedPlanes = new List<GameObject>();
-
+                
                 for (int i = 0; i < myData._iUser.Length; i++)
                 {
                     var currentPlane = myData._iUser[i];
@@ -119,32 +101,30 @@ public class SaveAndLoadPlanes : MonoBehaviour
                     Renderer renderer = duplicate.GetComponent<Renderer>();
 
                     Create2DTextureFromPng(currentPlane.name, renderer);
-                    //renderer.material.mainTexture = Get2DTexture(vp);
-
+                    
                     VPosition = new Vector3(currentPlane.x, currentPlane.y, currentPlane.z);
 
                     duplicate.transform.localScale = new Vector3(currentPlane.scaleX, currentPlane.scaleY, currentPlane.scaleZ);
                     duplicate.transform.position = VPosition;
                     duplicate.name = currentPlane.name;
                     duplicate.tag = "USPlane";
-                    //duplicate.transform.rotation = new Vector3(myData._iUser.rotationX, myData._iUser.rotationY, myData._iUser.rotationZ, myData._iUser.rotationW);
                     duplicate.transform.rotation = new Quaternion(currentPlane.rotationX, currentPlane.rotationY, currentPlane.rotationZ, currentPlane.rotationW);
 
-                var textLabelObject = new GameObject();
-                TextMeshPro textComponent = textLabelObject.AddComponent<TextMeshPro>();
-                textComponent.text = currentPlane.labelText;
+                    var textLabelObject = new GameObject();
+                    TextMeshPro textComponent = textLabelObject.AddComponent<TextMeshPro>();
+                    textComponent.text = currentPlane.labelText;
 
-                // Create the textLabel child object.
-                textLabelObject.transform.parent = duplicate.transform;
+                    // Create the textLabel child object.
+                    textLabelObject.transform.parent = duplicate.transform;
 
-                textLabelObject.transform.localPosition = new Vector3(currentPlane.labelX, currentPlane.labelY, currentPlane.labelZ);
-                textLabelObject.transform.localRotation = new Quaternion(currentPlane.labelRotationX, currentPlane.labelRotationY, currentPlane.labelRotationZ, currentPlane.labelRotationW);
+                    textLabelObject.transform.localPosition = new Vector3(currentPlane.labelX, currentPlane.labelY, currentPlane.labelZ);
+                    textLabelObject.transform.localRotation = new Quaternion(currentPlane.labelRotationX, currentPlane.labelRotationY, currentPlane.labelRotationZ, currentPlane.labelRotationW);
                 
-                textLabelObject.transform.localScale = new Vector3(1f, 1f, 1f);
-                textComponent.fontSize = currentPlane.labelFontSize;
+                    textLabelObject.transform.localScale = new Vector3(1f, 1f, 1f);
+                    textComponent.fontSize = currentPlane.labelFontSize;
 
-                // ----------- Creation of probe sided edge Line ------------------------------------------------------------------------------
-                var probeSidedEdgeLineOfUsImage = new GameObject();
+                    // ----------- Creation of probe sided edge Line ------------------------------------------------------------------------------
+                    var probeSidedEdgeLineOfUsImage = new GameObject();
                     probeSidedEdgeLineOfUsImage.name = "Reloaded_ProbeSidedEdgeLine_CloneUSPlane" + currentPlane.imageNumber; //imageCounter;
                     probeSidedEdgeLineOfUsImage.tag = "ProbeSidedLine";
                     probeSidedEdgeLineOfUsImage.AddComponent<MeshFilter>();
@@ -167,101 +147,77 @@ public class SaveAndLoadPlanes : MonoBehaviour
                     probeSidedEdgeOfUSPlane.SetPosition(1, secondCornerOfProbeSidedLine);
 
                     imageCounter++;
-                //duplicate.transform.Rotate(myData._iUser.rotationX, myData._iUser.rotationY, myData._iUser.rotationZ, Space.World);
-
-                //duplicatedPlanes.Add(duplicate);
+                }
             }
-
-                //GameObject duplicate = Instantiate(_Player);
-                //VPosition = new Vector3(myData._iUser.x, myData._iUser.y, myData._iUser.z);
-
-                //duplicate.transform.localScale = new Vector3(myData._iUser.scaleX, myData._iUser.scaleY, myData._iUser.scaleZ);
-                //duplicate.transform.position = VPosition;
-                ////duplicate.transform.rotation = new Vector3(myData._iUser.rotationX, myData._iUser.rotationY, myData._iUser.rotationZ, myData._iUser.rotationW);
-                //duplicate.transform.rotation = new Quaternion(myData._iUser.rotationX, myData._iUser.rotationY, myData._iUser.rotationZ, myData._iUser.rotationW);
-                ////duplicate.transform.Rotate(myData._iUser.rotationX, myData._iUser.rotationY, myData._iUser.rotationZ, Space.World);
-
-
-                // just a way to show that we loaded in ok 
-                //Debug.Log(myData._iUser.name);
-            }
-
     }
 
     public void Save()
     {
-        //*************************************************** 
-        // Saving The Player... 
-        // **************************************************    
+        CreatedPlanes = GameObject.FindGameObjectsWithTag("USPlane"); 
+        CreatedProbeSidedLines = GameObject.FindGameObjectsWithTag("ProbeSidedLine");
+
+        myData = new UserData();
+        myData._iUser = new UserData.DemoData[CreatedPlanes.Length];
+
+        for (int i = 0; i < CreatedPlanes.Length; i++)
+        {
+            var currentUltrasoundPlane = CreatedPlanes[i];
+            //var currentProbeSidedLane = CreatedProbeSidedLines[i];
+
+            GetVertices(currentUltrasoundPlane);
         
-            CreatedPlanes = GameObject.FindGameObjectsWithTag("USPlane"); 
-            CreatedProbeSidedLines = GameObject.FindGameObjectsWithTag("ProbeSidedLine");
+            myData._iUser[i] = new UserData.DemoData();
 
-            myData = new UserData();
-            myData._iUser = new UserData.DemoData[CreatedPlanes.Length];
+            myData._iUser[i].x = currentUltrasoundPlane.transform.position.x;
+            myData._iUser[i].y = currentUltrasoundPlane.transform.position.y;
+            myData._iUser[i].z = currentUltrasoundPlane.transform.position.z;
+            myData._iUser[i].name = currentUltrasoundPlane.name;
 
-            for (int i = 0; i < CreatedPlanes.Length; i++)
-            {
-                var currentUltrasoundPlane = CreatedPlanes[i];
-                //var currentProbeSidedLane = CreatedProbeSidedLines[i];
+            myData._iUser[i].rotationX = currentUltrasoundPlane.transform.rotation.x;
+            myData._iUser[i].rotationY = currentUltrasoundPlane.transform.rotation.y;
+            myData._iUser[i].rotationZ = currentUltrasoundPlane.transform.rotation.z;
+            myData._iUser[i].rotationW = currentUltrasoundPlane.transform.rotation.w;
 
-                GetVertices(currentUltrasoundPlane);
+            myData._iUser[i].scaleX = currentUltrasoundPlane.transform.lossyScale.x;
+            myData._iUser[i].scaleY = currentUltrasoundPlane.transform.lossyScale.y;
+            myData._iUser[i].scaleZ = currentUltrasoundPlane.transform.lossyScale.z;
+
+            myData._iUser[i].probeSidedLineFirstCornerVerticesX = CornerVerticesProbePlane[0].x;
+            myData._iUser[i].probeSidedLineFirstCornerVerticesY = CornerVerticesProbePlane[0].y;
+            myData._iUser[i].probeSidedLineFirstCornerVerticesZ = CornerVerticesProbePlane[0].z;
             
-                myData._iUser[i] = new UserData.DemoData();
+            myData._iUser[i].probeSidedLineSecondCornerVerticesX = CornerVerticesProbePlane[1].x;
+            myData._iUser[i].probeSidedLineSecondCornerVerticesY = CornerVerticesProbePlane[1].y;
+            myData._iUser[i].probeSidedLineSecondCornerVerticesZ = CornerVerticesProbePlane[1].z;
 
-                myData._iUser[i].x = currentUltrasoundPlane.transform.position.x;
-                myData._iUser[i].y = currentUltrasoundPlane.transform.position.y;
-                myData._iUser[i].z = currentUltrasoundPlane.transform.position.z;
-                myData._iUser[i].name = currentUltrasoundPlane.name;
+            char planeNrAsChar = currentUltrasoundPlane.name[currentUltrasoundPlane.name.Length - 1];
+            int planeNr = planeNrAsChar - '0';
+            myData._iUser[i].imageNumber = planeNr;
+            
+            var textLabel = currentUltrasoundPlane.transform.GetChild(0);
+            myData._iUser[i].labelX = textLabel.transform.localPosition.x;
+            myData._iUser[i].labelY = textLabel.transform.localPosition.y;
+            myData._iUser[i].labelZ = textLabel.transform.localPosition.z;
 
-                myData._iUser[i].rotationX = currentUltrasoundPlane.transform.rotation.x;
-                myData._iUser[i].rotationY = currentUltrasoundPlane.transform.rotation.y;
-                myData._iUser[i].rotationZ = currentUltrasoundPlane.transform.rotation.z;
-                myData._iUser[i].rotationW = currentUltrasoundPlane.transform.rotation.w;
+            myData._iUser[i].labelRotationW = textLabel.localRotation.w;
+            myData._iUser[i].labelRotationX = textLabel.localRotation.x;
+            myData._iUser[i].labelRotationY = textLabel.localRotation.y;
+            myData._iUser[i].labelRotationZ = textLabel.localRotation.z;
 
-                myData._iUser[i].scaleX = currentUltrasoundPlane.transform.lossyScale.x;
-                myData._iUser[i].scaleY = currentUltrasoundPlane.transform.lossyScale.y;
-                myData._iUser[i].scaleZ = currentUltrasoundPlane.transform.lossyScale.z;
+            var textMeshProComponent = textLabel.GetComponent<TextMeshPro>();
 
-                myData._iUser[i].probeSidedLineFirstCornerVerticesX = CornerVerticesProbePlane[0].x;
-                myData._iUser[i].probeSidedLineFirstCornerVerticesY = CornerVerticesProbePlane[0].y;
-                myData._iUser[i].probeSidedLineFirstCornerVerticesZ = CornerVerticesProbePlane[0].z;
-                
-                myData._iUser[i].probeSidedLineSecondCornerVerticesX = CornerVerticesProbePlane[1].x;
-                myData._iUser[i].probeSidedLineSecondCornerVerticesY = CornerVerticesProbePlane[1].y;
-                myData._iUser[i].probeSidedLineSecondCornerVerticesZ = CornerVerticesProbePlane[1].z;
+            myData._iUser[i].labelFontSize = textMeshProComponent.fontSize;
+            myData._iUser[i].labelText = textMeshProComponent.text;
 
-                char planeNrAsChar = currentUltrasoundPlane.name[currentUltrasoundPlane.name.Length - 1];
-                int planeNr = planeNrAsChar - '0';
-                myData._iUser[i].imageNumber = planeNr;
-                //myData._iUser[i].scaleW = _Player.transform.lossyScale.w;
-
-                // Hack: Non-generic solution: We are assuming that there is only one child which is the textLabel object.
-                var textLabel = currentUltrasoundPlane.transform.GetChild(0);
-                myData._iUser[i].labelX = textLabel.transform.localPosition.x;
-                myData._iUser[i].labelY = textLabel.transform.localPosition.y;
-                myData._iUser[i].labelZ = textLabel.transform.localPosition.z;
-
-                myData._iUser[i].labelRotationW = textLabel.localRotation.w;
-                myData._iUser[i].labelRotationX = textLabel.localRotation.x;
-                myData._iUser[i].labelRotationY = textLabel.localRotation.y;
-                myData._iUser[i].labelRotationZ = textLabel.localRotation.z;
-
-                var textMeshProComponent = textLabel.GetComponent<TextMeshPro>();
-
-                myData._iUser[i].labelFontSize = textMeshProComponent.fontSize;
-                myData._iUser[i].labelText = textMeshProComponent.text;
-
-                localRot = textLabel.localRotation;
-                TextLabel = textLabel;
-                
+            localRot = textLabel.localRotation;
+            TextLabel = textLabel;            
         }
 
         // Create the xml
         _data = SerializeObject(myData);
-            // This is the final resulting XML from the serialization process 
-            CreateXML();
-        }
+        
+        CreateXML();
+    }
 
     public void Delete()
     {
@@ -286,7 +242,6 @@ public class SaveAndLoadPlanes : MonoBehaviour
 
     private void Create2DTextureFromPng(string fileName, Renderer renderer)
     {
-        //var filePath = _FileLocation + "\\" + fileName;
         var filePath = _FileLocation + "/" + fileName +".png";
 
         if (System.IO.File.Exists(filePath))
@@ -296,9 +251,6 @@ public class SaveAndLoadPlanes : MonoBehaviour
             texture.LoadImage(bytes);
 
             renderer.material.mainTexture = texture;
-
-            //MeshRenderer meshRenderer = plane.GetComponent<meshRenderer>();
-            //meshRenderer.material = 
         }
     }
 
@@ -330,7 +282,6 @@ public class SaveAndLoadPlanes : MonoBehaviour
         return XmlizedString;
     }
 
-    // Here we deserialize it back into its original form 
     object DeserializeObject(string pXmlizedString)
     {
         XmlSerializer xs = new XmlSerializer(typeof(UserData));
@@ -339,7 +290,6 @@ public class SaveAndLoadPlanes : MonoBehaviour
         return xs.Deserialize(memoryStream);
     }
 
-    // Finally our save and load methods for the file itself 
     void CreateXML()
     {
         StreamWriter writer;
@@ -369,7 +319,6 @@ public class SaveAndLoadPlanes : MonoBehaviour
 
     void GetVertices(GameObject plane)
     {
-        // Probe plane
         LocalVerticesProbePlane = new List<Vector3>(plane.GetComponent<MeshFilter>().mesh.vertices);
         GlobalVerticesProbePlane.Clear();
         CornerVerticesProbePlane.Clear();
@@ -386,18 +335,12 @@ public class SaveAndLoadPlanes : MonoBehaviour
     }
 }
 
-
-// UserData is our custom class that holds our defined objects we want to store in XML format
 [System.Serializable]
 public class UserData
 {
-    // We have to define a default instance of the structure 
     public DemoData[] _iUser;
-
-    // Default constructor doesn't really do anything at the moment 
     public UserData() { }
 
-    // Anything we want to store in the XML file, we define it here 
     public class DemoData
     {
         public float x;
