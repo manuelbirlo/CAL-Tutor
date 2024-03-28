@@ -52,11 +52,6 @@ public class AddChildObjectsToParent : MonoBehaviour
             plane.transform.parent = gameObject.transform;
         }
 
-        //foreach (var line in createdProbeSidedLines)
-        //{
-        //    line.transform.parent = gameObject.transform;
-        //}
-
         lineRenderingEnabled = true;
     }
 
@@ -65,17 +60,11 @@ public class AddChildObjectsToParent : MonoBehaviour
         lineRenderingEnabled = false;
 
         var createdPlanes = GameObject.FindGameObjectsWithTag("USPlane");
-        //var createdProbeSidedLines = GameObject.FindGameObjectsWithTag("ProbeSidedLine");
-
+        
         foreach (var plane in createdPlanes)
         {
             plane.transform.parent = null;
         }
-
-        //foreach (var line in createdProbeSidedLines)
-        //{
-        //    line.transform.parent = null;
-        //}
     }
 
     void GetVertices(GameObject planeObject)
