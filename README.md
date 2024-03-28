@@ -32,6 +32,6 @@ Please note:
 The Unity project has been written in a short amount of time as part of a research project and should be cleaned up in future. 
 This includes: 
 - Reorganizing Unity assets into meaningful folders
-- Clean up of C# scripts (remove code comments, clean up source code). 
+- Clean up of C# scripts 
 
 
