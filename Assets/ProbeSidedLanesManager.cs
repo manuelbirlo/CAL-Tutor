@@ -53,16 +53,6 @@ public class ProbeSidedLanesManager : MonoBehaviour
             probeSidedLane3 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_3").gameObject;
             probeSidedLane3.SetActive(true);
         }
-        //createdProbeSidedLines = GameObject.FindGameObjectsWithTag("ProbeSidedLine");
-
-        //foreach (var probeSidedLane in createdProbeSidedLines)
-        //{
-        //    probeSidedLane.SetActive(true);
-        //}
-
-        //CreateProbeSidedEdgeLinesForAllStandardPlanes(headStandardPlane, 1);
-        //CreateProbeSidedEdgeLinesForAllStandardPlanes(abdomenStandardPlane, 2);
-        //CreateProbeSidedEdgeLinesForAllStandardPlanes(femurStandardPlane, 3);
     }
 
     public void DeactivateProbeSidedEdges()
@@ -86,53 +76,4 @@ public class ProbeSidedLanesManager : MonoBehaviour
             probeSidedLane3.SetActive(false);
         }
     }
-
-    //void CreateProbeSidedEdgeLinesForAllStandardPlanes(GameObject standardPlane, int identifier)
-    //{
-    //    // ----------- Creation of probe sided edge Line ------------------------------------------------------------------------------
-    //    var probeSidedEdgeLineOfUsImage = new GameObject();
-    //    probeSidedEdgeLineOfUsImage.name = "ProbeSidedEdgeLine_CloneUSPlane_" + identifier;
-    //    probeSidedEdgeLineOfUsImage.tag = "ProbeSidedLine";
-    //    probeSidedEdgeLineOfUsImage.AddComponent<MeshFilter>();
-
-    //    probeSidedEdgeLineOfUsImage.AddComponent<MeshRenderer>();
-
-
-
-    //    LineRenderer probeSidedEdgeOfUSPlane = probeSidedEdgeLineOfUsImage.AddComponent<LineRenderer>();
-
-    //    probeSidedEdgeOfUSPlane.transform.parent = babyModel.transform;
-
-    //    probeSidedEdgeOfUSPlane.gameObject.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
-    //    probeSidedEdgeOfUSPlane.SetWidth(0.01F, 0.01F);
-    //    probeSidedEdgeOfUSPlane.SetVertexCount(2);
-
-    //    CornerVerticesProbePlane = new List<Vector3>();
-    //    LocalVerticesProbePlane = new List<Vector3>();
-    //    GlobalVerticesProbePlane = new List<Vector3>();
-
-    //    GetVertices(standardPlane);
-    //    probeSidedEdgeOfUSPlane.SetPosition(0, CornerVerticesProbePlane[0]);
-    //    probeSidedEdgeOfUSPlane.SetPosition(1, CornerVerticesProbePlane[1]);
-    //}
-
-    //void GetVertices(GameObject planeObject)
-    //{
-    //    // CurrentGameObject = planeObject;
-
-    //    // Probe plane
-    //    LocalVerticesProbePlane = new List<Vector3>(planeObject.GetComponent<MeshFilter>().mesh.vertices);
-    //    GlobalVerticesProbePlane.Clear();
-    //    CornerVerticesProbePlane.Clear();
-
-    //    foreach (Vector3 point in LocalVerticesProbePlane)
-    //    {
-    //        GlobalVerticesProbePlane.Add(planeObject.transform.TransformPoint(point));
-    //    }
-
-    //    foreach (int id in CornerIDs)
-    //    {
-    //        CornerVerticesProbePlane.Add(GlobalVerticesProbePlane[id]);
-    //    }
-    //}
 }
