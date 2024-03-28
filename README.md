@@ -1,6 +1,6 @@
 # CAL-Tutor
 
-![Example Image](README_files/CAL-Tutor_graphical_workflow_overview.png)
+![Example Image](readme_assets/CAL-Tutor_graphical_workflow_overview.png)
 
 Our MDPI Journal of Imaging paper can be found here: [CAL-Tutor: A HoloLens 2 Application for Training in Obstetric Sonography and User Motion Data Recording](https://www.mdpi.com/2313-433X/9/1/6)
 
@@ -26,7 +26,7 @@ During the navigation to the standard planes, holographic instruction cards can 
 During the navigation phase user motion data is being recorded that can be downloaded via the HoloLens device portal. 
 
 Click on the image below to see our CAL-Tutor demo video on youtube:
-[![Watch the video](/README_files/CAL-Tutor_demo_video_screenshot.png)](https://youtu.be/g0X4uLhCjoI)
+[![Watch the video](/readme_assets/CAL-Tutor_demo_video_screenshot.png)](https://youtu.be/g0X4uLhCjoI)
 
 Please note: 
 The Unity project has been written in a short amount of time as part of a research project and should be cleaned up in future. 
