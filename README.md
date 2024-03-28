@@ -2,14 +2,19 @@
 
 ![Example Image](readme_assets/CAL-Tutor_graphical_workflow_overview.png)
 
-Our MDPI Journal of Imaging paper can be found here: [CAL-Tutor: A HoloLens 2 Application for Training in Obstetric Sonography and User Motion Data Recording](https://www.mdpi.com/2313-433X/9/1/6)
+## Research article
+| Our MDPI Journal of Imaging paper can be found here: |
+|--------|
+|[CAL-Tutor: A HoloLens 2 Application for Training in Obstetric Sonography and User Motion Data Recording](https://www.mdpi.com/2313-433X/9/1/6)|
+
+##  Project description: 
 
 The CAL-Tutor project is a Unity game engine application designed for the Microsoft HoloLens 2 that can be used in the context of medical education aplied to obstetrics ultrasound. 
 
 The application uses the Mixed Reality Toolkit (MRTK) (https://github.com/microsoft/MixedRealityToolkit-Unity) in order to create mixed reality objects and user interactions. 
 
 The provided holographic models are: 
-- Baby incl. mother's abdomen (based on a 3D reconstruction of a phantom that is being used for medical education)
+- Baby incl. mother's abdomen (based on a 3D reconstruction of a phantom that is being used for medical education)<br>
 - Clarius wireless ultrasound probe (https://clarius.com/)
 - A holographic menu with several options
 
@@ -23,15 +28,16 @@ The used tracking software is HoloLensArToolkit (https://github.com/qian256/Holo
 
 During the navigation to the standard planes, holographic instruction cards can be displayed that describe the characteristics of the target anatomy. 
 
-During the navigation phase user motion data is being recorded that can be downloaded via the HoloLens device portal. 
+During the navigation phase user motion data is being recorded that can be downloaded via the HoloLens device portal.
 
+## Demo video:
 Click on the image below to see our CAL-Tutor demo video on youtube:
 [![Watch the video](/readme_assets/CAL-Tutor_demo_video_screenshot.png)](https://youtu.be/g0X4uLhCjoI)
 
-Please note: 
-The Unity project has been written in a short amount of time as part of a research project and should be cleaned up in future. 
+## Please note: 
+The source code of this Unity project has been written in a short amount of time as part of a research project and should be cleaned up in future. 
 This includes: 
 - Reorganizing Unity assets into meaningful folders
-- Clean up of C# scripts 
+- Code clean up of C# scripts 
 
 
