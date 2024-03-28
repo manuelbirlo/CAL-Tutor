@@ -33,11 +33,3 @@ During the navigation phase user motion data is being recorded that can be downl
 ## Demo video:
 Click on the image below to see our CAL-Tutor demo video on youtube:
 [![Watch the video](/readme_assets/CAL-Tutor_demo_video_screenshot.png)](https://youtu.be/g0X4uLhCjoI)
-
-## Please note: 
-The source code of this Unity project has been written in a short amount of time as part of a research project and should be cleaned up in future. 
-This includes: 
-- Reorganizing Unity assets into meaningful folders
-- Code clean up of C# scripts 
-
-
