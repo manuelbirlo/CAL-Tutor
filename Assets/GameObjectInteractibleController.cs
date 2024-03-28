@@ -27,15 +27,5 @@ public class GameObjectInteractibleController : MonoBehaviour
             targetGameObject.GetComponent<BoundsControl>().enabled = true;
             targetGameObject.GetComponent<ObjectManipulator>().enabled = true;
         }
-        //var boundsControl = interactibleGameObject.GetComponent<BoundsControl>();
-        //var objectManipulator = interactibleGameObject.GetComponent<ObjectManipulator>();
-
-        //if (boundsControl != null)
-        //{
-        //    if (!boundsControl.enabled)
-        //    {
-        //        boundsControl.enabled = false;
-        //    }
-        //}
     }
 }
