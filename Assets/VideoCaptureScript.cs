@@ -5,35 +5,16 @@ using System.Linq;
 
 public class VideoCaptureScript : MonoBehaviour
 {
-    //static readonly float MaxRecordingTime = 5.0f;
-
     private bool stopRecording = false;
 
     UnityEngine.Windows.WebCam.VideoCapture m_VideoCapture = null;
-    //float m_stopRecordingTimer = float.MaxValue;
-
-    // Use this for initialization
+    
     void Start()
     {
-
-        //StartVideoCapture();
     }
 
     void Update()
     {
-        //if (m_VideoCapture == null || !m_VideoCapture.IsRecording)
-        //{
-        //    return;
-        //}
-
-        //if (stopRecording)
-        //{
-        //    m_VideoCapture.StopRecordingAsync(OnStoppedRecordingVideo);
-        //}
-        //if (Time.time > m_stopRecordingTimer)
-        //{
-        //    m_VideoCapture.StopRecordingAsync(OnStoppedRecordingVideo);
-        //}
     }
 
     public void StartVideoCapture()
@@ -112,7 +93,6 @@ public class VideoCaptureScript : MonoBehaviour
 
     public void EndVideoCapture()
     {
-        //stopRecording = true;
         m_VideoCapture.StopRecordingAsync(OnStoppedRecordingVideo);
     }
 
@@ -134,7 +114,6 @@ public class VideoCaptureScript : MonoBehaviour
     void OnStartedRecordingVideo(UnityEngine.Windows.WebCam.VideoCapture.VideoCaptureResult result)
     {
         Debug.Log("Started Recording Video!");
-        //m_stopRecordingTimer = Time.time + MaxRecordingTime;
     }
 
     void OnStoppedRecordingVideo(UnityEngine.Windows.WebCam.VideoCapture.VideoCaptureResult result)
