@@ -6,14 +6,10 @@ using Microsoft.MixedReality.Toolkit.UI;
 
 public class ToggleCheckButtonCheckedState : MonoBehaviour
 {
-    //public GameObject toggleCheckButton;
-
     private bool dataRecordingAlreadyStopped = false;
 
     public bool isChecked;
-
     public DataCollection dataCollection;
-
     public Interactable checkbox;
 
     // only for visual debugging in unity.
@@ -39,15 +35,5 @@ public class ToggleCheckButtonCheckedState : MonoBehaviour
                 dataCollectionStopped = true;
             }
         }
-        //else
-        //{
-        //    isChecked = false;
-
-        //    if (dataRecordingAlreadyStarted)
-        //    {
-        //        dataCollection.EndDataRecording();
-        //        dataRecordingAlreadyStarted = false;
-        //    }
-        //}
     }
 }
