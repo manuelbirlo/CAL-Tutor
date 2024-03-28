@@ -29,7 +29,7 @@ public class PlaneDistanceInformation : MonoBehaviour
 
     public GameObject babyModel;
 
-    //// Start is called before the first frame update
+    // Start is called before the first frame update
     void OnEnable()
     {
         babyModel = GameObject.Find("BabyModel");
@@ -70,11 +70,6 @@ public class PlaneDistanceInformation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (targetPlane == null)
-        //{
-        //    targetPlane = GameObject.Find("USPlane" + PlaneNumber);
-        //}
-
         xDifference = targetPlane.transform.position.x - probePlane.transform.position.x;
         yDifference = targetPlane.transform.position.y - probePlane.transform.position.y;
         zDifference = targetPlane.transform.position.z - probePlane.transform.position.z;
