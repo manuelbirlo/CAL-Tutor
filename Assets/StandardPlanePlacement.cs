@@ -50,12 +50,6 @@ public class StandardPlanePlacement : MonoBehaviour
 
         probe.GetComponent<ObjectManipulator>().enabled = true;
         probe.GetComponent<BoundsControl>().enabled = true;
-        //cube.AddComponent<ObjectManipulator>();
-        //cube.AddComponent<BoundsControl>();
-
-        //probe.AddComponent<ObjectManipulator>();
-        //probe.AddComponent<BoundsControl>();
-
     }
 
     public void DeactivateManualInteraction()
