@@ -2,6 +2,8 @@
 
 ![Example Image](README_files/CAL-Tutor_graphical_overview.png)
 
+Our MDPI Journal of Imaging paper can be found here: [CAL-Tutor: A HoloLens 2 Application for Training in Obstetric Sonography and User Motion Data Recording](https://www.mdpi.com/2313-433X/9/1/6)
+
 The CAL-Tutor project is a Unity game engine application designed for the Microsoft HoloLens 2 that can be used in the context of medical education aplied to obstetrics ultrasound. 
 
 The application uses the Mixed Reality Toolkit (MRTK) (https://github.com/microsoft/MixedRealityToolkit-Unity) in order to create mixed reality objects and user interactions. 
