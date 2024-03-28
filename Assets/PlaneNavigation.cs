@@ -48,13 +48,7 @@ public class PlaneNavigation : MonoBehaviour
     LineRenderer yCoordinateAxisArrow;
     LineRenderer zCoordinateAxisArrow;
 
-    //LineRenderer probeSidedEdgeOfUSPlane;
-
     GameObject sphere;
-
-    //public Vector3 startPositionOfArrow1;
-
-    //private Quaternion targetRotation;
 
     // Start is called before the first frame update
     void OnEnable()
@@ -62,28 +56,6 @@ public class PlaneNavigation : MonoBehaviour
         stopWatch = new Stopwatch();
         stopWatch.Start();
 
-        //GameObject xAxisArrow = new GameObject();
-        //xAxisArrow.name = "xAxisArrow1";
-
-        //GameObject xAxisArrowHead = new GameObject();
-        //xAxisArrowHead.name = "xAxisArrow1Head";
-        ////xAxisArrow.tag = "xAxisArrow1";
-
-        //xCoordinateAxisArrow = xAxisArrow.AddComponent<LineRenderer>();
-        //xCoordinateAxisArrowHead = xAxisArrowHead.AddComponent<LineRenderer>();
-
-
-        //xCoordinateAxisArrow.SetWidth(0.025F, 0.025F);
-        //xCoordinateAxisArrow.SetVertexCount(2);
-
-        //yCoordinateAxisArrow = new LineRenderer();
-        //zCoordinateAxisArrow = new LineRenderer();
-
-        //sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        //sphere.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-
-        //lr3 = new GameObject().AddComponent<LineRenderer>();
-        //lr3.gameObject.SetParent(transform, false);
         Transform parent = ultrasoundPlaneOfProbe.transform;
         GameObject line1 = new GameObject();
         line1.name = "Line1";
@@ -97,14 +69,6 @@ public class PlaneNavigation : MonoBehaviour
         GameObject line4 = new GameObject();
         line4.name = "Line4";
         line4.tag = "Line";
-
-        //GameObject probeSidedEdgeLineOfUsImage = new GameObject();
-        //probeSidedEdgeLineOfUsImage.name = "ProbeSidedEdgeLine";
-
-        //probeSidedEdgeOfUSPlane = probeSidedEdgeLineOfUsImage.AddComponent<LineRenderer>();
-        //probeSidedEdgeOfUSPlane.gameObject.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
-        //probeSidedEdgeOfUSPlane.SetWidth(0.01F, 0.01F);
-        //probeSidedEdgeOfUSPlane.SetVertexCount(2);
 
         child1LineRenderer = line1.AddComponent<LineRenderer>();
         child1LineRenderer.material.SetColor("_Color", new Color(255f, 0f, 255f, 0.5f));
@@ -204,12 +168,6 @@ public class PlaneNavigation : MonoBehaviour
         child4LineRendererArrow.material.EnableKeyword("_ALPHABLEND_ON");
         child4LineRendererArrow.material.renderQueue = 3000;
 
-        //child1LineRendererArrow.widthCurve = new AnimationCurve(
-        //    new Keyframe(0, 0.4f)
-        //    , new Keyframe(0.999f - PercentHead, 0.4f)  // neck of arrow
-        //    , new Keyframe(1 - PercentHead, 1f)  // max width of arrow head
-        //    , new Keyframe(1, 0f));
-
         CornerVerticesProbePlane = new List<Vector3>();
         LocalVerticesProbePlane = new List<Vector3>();
         GlobalVerticesProbePlane = new List<Vector3>();
@@ -217,22 +175,6 @@ public class PlaneNavigation : MonoBehaviour
         CornerVerticesTargetPlane = new List<Vector3>();
         LocalVerticesTargetPlane = new List<Vector3>();
         GlobalVerticesTargetPlane = new List<Vector3>();
-
-        //targetUltrasoundPlane = GameObject.Find("USPlane" + PlaneNumber);
-        //targetPos = targetUltrasoundPlane.transform.position;
-
-        /*
-        // Add a Line Renderer to the GameObject
-        //line1 = ultrasoundPlaneOfProbe.AddComponent<LineRenderer>();
-        line = ultrasoundPlaneOfProbe.AddComponent<LineRenderer>();
-        
-
-        // Set the width of the Line Renderer
-        line.SetWidth(0.025F, 0.025F);
-       
-        // Set the number of vertex fo the Line Renderer
-        line.SetVertexCount(2);
-        */
     }
 
     void OnDisable()
@@ -240,46 +182,14 @@ public class PlaneNavigation : MonoBehaviour
         stopWatch = null;
     }
 
-    //public void SetTargetUsPlane()
-    //{
-    //    targetUltrasoundPlane = GameObject.Find("USPlane" + PlaneNumber);
-    //}
-
     // Update is called once per frame
     void Update()
     {
-        //if (targetUltrasoundPlane == null)
-        //{
-        //    targetUltrasoundPlane = GameObject.Find("USPlane" + PlaneNumber);
-        //}
-        
-        //xCoordinateAxisArrow.SetPosition(0, new Vector3(0, 0, 1f));
-        //xCoordinateAxisArrow.SetPosition(1, new Vector3(0.3f, 0, 1f));
-        //currentPos = ultrasoundPlaneOfProbe.transform.position;
-
-        //Vector3 midPointVector = (currentPos + targetPos) / 2;
-
         // Check if the GameObjects are not null
         if (ultrasoundPlaneOfProbe != null && targetUltrasoundPlane != null)
         {
-            //TimeSpan timeSpan = stopWatch.Elapsed;
-            //elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds / 10);
-
-            //LocalVerticesProbePlane.Clear();
-            //CornerVerticesTargetPlane.Clear();
-            //LocalVerticesTargetPlane.Clear();
-            //CornerVerticesProbePlane.Clear();
             GetVertices();
 
-            /*
-            // Update position of the two vertex of the Line Renderer
-            //line.SetPosition(0, ultrasoundPlaneOfProbe.transform.position);
-            //line.SetPosition(1, targetUltrasoundPlane.transform.position);
-            line.SetPosition(0, CornerVerticesTargetPlane[0]);
-            line.SetPosition(1, targetUltrasoundPlane.transform.position);
-            */
-
-            //line.SetVertexCount(2);
             child1LineRenderer.SetPosition(0, CornerVerticesProbePlane[0]);
             child1LineRenderer.SetPosition(1, CornerVerticesTargetPlane[0]);
             child2LineRenderer.SetPosition(0, CornerVerticesProbePlane[1]);
@@ -290,10 +200,8 @@ public class PlaneNavigation : MonoBehaviour
             child4LineRenderer.SetPosition(1, CornerVerticesTargetPlane[3]);
 
             UnityEngine.Debug.Log("4");
-            //probeSidedEdgeOfUSPlane.SetPosition(0, CornerVerticesProbePlane[0]);
-            //probeSidedEdgeOfUSPlane.SetPosition(1, CornerVerticesProbePlane[1]);
-
-            PercentHead = 0.7f;// (float)(PercentHead / Vector3.Distance(CornerVerticesProbePlane[0], CornerVerticesTargetPlane[0]));
+           
+            PercentHead = 0.7f;
 
             child1LineRendererArrow.widthCurve = new AnimationCurve(
             new Keyframe(0, 0.1f)
@@ -318,26 +226,6 @@ public class PlaneNavigation : MonoBehaviour
             , new Keyframe(0.999f - PercentHead, 0.3f)  // neck of arrow
             , new Keyframe(1 - PercentHead, 1f) // max width of arrow head
             , new Keyframe(1, 0f));
-
-
-           // // ----- TEST CODE ONLY --------
-           // xCoordinateAxisArrowHead.widthCurve = new AnimationCurve(
-           //new Keyframe(0, 0.1f)
-           //, new Keyframe(0.999f - PercentHead, 0.3f)  // neck of arrow
-           //, new Keyframe(1 - PercentHead, 1f) // max width of arrow head
-           //, new Keyframe(1, 0f));
-
-           // xCoordinateAxisArrowHead.SetPositions(new Vector3[] {
-           //   new Vector3(0.3f, 0, 1f)
-           //   , Vector3.Lerp(new Vector3(0.3f, 0, 1f), new Vector3(0.6f,0,0), 1) //0.999f - PercentHead);
-           //   , Vector3.Lerp(new Vector3(0.2f,0,0), new Vector3(0.6f,0,0), 1) //1 - PercentHead)
-           //   , new Vector3(0.3f, 0, 1f) });
-           // // ----------------------------
-
-            //new Keyframe(0, 0.4f)
-            //, new Keyframe(0.999f - PercentHead, 0.4f)  // neck of arrow
-            //, new Keyframe(1 - PercentHead, 1f) // max width of arrow head
-            //, new Keyframe(1, 0f));
 
             var startPositionOfArrow1 = new Vector3();
             var startPositionOfArrow2 = new Vector3();
@@ -383,38 +271,14 @@ public class PlaneNavigation : MonoBehaviour
               , Vector3.Lerp(startPositionOfArrow4, CornerVerticesTargetPlane[3], 1) //0.999f - PercentHead);
               , Vector3.Lerp(startPositionOfArrow4, CornerVerticesTargetPlane[3], 1) //1 - PercentHead)
               , startPositionOfArrow4 });
-
-            UnityEngine.Debug.Log("5");
-            //sphere.transform.position = CornerVerticesProbePlane[0];
-
-            //Vector3 displacement = velocity * Time.deltaTime;
-            //transform.localPosition += displacement;
         }
 
     }
-
-    //void CreateMovingSphere(GameObject sphere, Vector3 origin, Vector3 target)
-    //{
-    //    Vector3 difference;
-    //    Vector3 currentSpherePosition;
-    //    float velocity = new Vector3(0.5f, 0.5f, 0.5f); ;
-
-    //    while (difference.x > 0f && difference.y > 0f && difference.z > 0f)
-    //    {
-    //        Vector3 displacement = velocity * Time.deltaTime;
-    //        currentSpherePosition += displacement;
-    //        shpere.transform.position = currentSpherePosition;
-    //    }
-    //    //Vector3 displacement = velocity * Time.deltaTime;
-    //    shpere.transform.position += displacement;
-    //}
 
     void DestroyLine()
     {
         stopWatch.Stop();
         
-        //elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds / 10);
-
         Destroy(line);
     }
 
@@ -454,13 +318,4 @@ public class PlaneNavigation : MonoBehaviour
 
         UnityEngine.Debug.Log("7");
     }
-
-    //public void SetTargetUltrasoundPlane()
-    //{
-    //    targetUltrasoundPlane = GameObject.Find("USPlane" + PlaneNumber);
-
-    //    Vector3 targetPos = new Vector3(A.transform.position.x, A.transform.position.y, 0);
-    //    public Vector3 currentPos;
-
-    //}
 }
