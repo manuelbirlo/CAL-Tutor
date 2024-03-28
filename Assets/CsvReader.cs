@@ -101,33 +101,10 @@ public class CsvReader : MonoBehaviour
         PlaceStandardPlanes();
         PlaceCube();
         PlaceCube();
-
-        //CreateProbeSidedEdgeLinesForAllStandardPlanes(headStandardPlane, 1);
-        //CreateProbeSidedEdgeLinesForAllStandardPlanes(abdomenStandardPlane, 2);
-        //CreateProbeSidedEdgeLinesForAllStandardPlanes(femurStandardPlane, 3);
-
-        //createdProbeSidedLines = GameObject.FindGameObjectsWithTag("ProbeSidedLine");
-        //createdPlanes = GameObject.FindGameObjectsWithTag("StandardPlane");
-        //lineRenderingEnabled = true;
     }
 
     void Update()
     {
-        //if (lineRenderingEnabled && !interactableOfCheckBox.IsToggled)
-        //{
-        //    for (int i = 0; i < createdProbeSidedLines.Length; i++)
-        //    {
-        //        var currentLine = createdProbeSidedLines[i];
-        //        var currentPlane = createdPlanes[i];
-
-        //        var lineRenderer = currentLine.GetComponent<LineRenderer>();
-
-        //        GetVertices(currentPlane);
-
-        //        lineRenderer.SetPosition(0, CornerVerticesProbePlane[0]);
-        //        lineRenderer.SetPosition(1, CornerVerticesProbePlane[1]);
-        //    }  
-        //}
     }
 
     public void DeactivateLineRendering()
