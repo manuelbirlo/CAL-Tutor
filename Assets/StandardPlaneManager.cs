@@ -56,31 +56,6 @@ public class StandardPlaneManager : MonoBehaviour
         }
     }
 
-    //public void TurnOffAllStandardPlanes()
-    //{
-    //    headStandardPlane = GameObject.Find("HeadPlane");
-    //    abdomenStandardPlane = GameObject.Find("AbdomenPlane");
-    //    femurStandardPlane = GameObject.Find("FemurPlane");
-
-    //   // csvReaderScript.DeactivateLineRendering();
-
-    //    headStandardPlane.GetComponent<MeshRenderer>().enabled = false;
-    //    abdomenStandardPlane.GetComponent<MeshRenderer>().enabled = false;
-    //    femurStandardPlane.GetComponent<MeshRenderer>().enabled = false;
-
-    //    headStandardPlane.transform.Find("HeadPlaneMirrored").GetComponent<MeshRenderer>().enabled = false;
-    //    abdomenStandardPlane.transform.Find("AbdomenPlaneMirrored").GetComponent<MeshRenderer>().enabled = false;
-    //    femurStandardPlane.transform.Find("FemurPlaneMirrored").GetComponent<MeshRenderer>().enabled = false;
-
-    //    //babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_1").GetComponent<LineRenderer>().enabled = false;
-    //    //babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_2").GetComponent<LineRenderer>().enabled = false;
-    //    //babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_3").GetComponent<LineRenderer>().enabled = false;
-
-    //    headStandardPlane.transform.Find("HeadLabelForUsImage").GetComponent<MeshRenderer>().enabled = false;
-    //    abdomenStandardPlane.transform.Find("AbdomenLabelForUsImage").GetComponent<MeshRenderer>().enabled = false;
-    //    femurStandardPlane.transform.Find("FemurLabelForUsImage").GetComponent<MeshRenderer>().enabled = false;
-    //}
-
     public void TurnOnActiveStandardPlaneForNavigation()
     {
         Interactable deactivateMRGuidanceToggleButton = GameObject.Find("DeactivateMRGuidance").GetComponent<Interactable>();
@@ -97,8 +72,6 @@ public class StandardPlaneManager : MonoBehaviour
         abdomenStandardPlane = GameObject.Find("AbdomenPlane");
         femurStandardPlane = GameObject.Find("FemurPlane");
 
-        //csvReaderScript.ReactivateLineRendering();
-
         if (activeStandardPlane == 1)
         {
             currentPlane = headStandardPlane;
@@ -111,8 +84,6 @@ public class StandardPlaneManager : MonoBehaviour
             MeshRendererEnabled = headStandardPlane.GetComponent<MeshRenderer>().enabled;
 
             headStandardPlane.transform.Find("HeadPlaneMirrored").GetComponent<MeshRenderer>().enabled = true;
-            
-            //babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_1").GetComponent<LineRenderer>().enabled = true;
             
             headStandardPlane.transform.Find("HeadLabelForUsImage").GetComponent<MeshRenderer>().enabled = true;
 
@@ -129,8 +100,6 @@ public class StandardPlaneManager : MonoBehaviour
 
             abdomenStandardPlane.transform.Find("AbdomenPlaneMirrored").GetComponent<MeshRenderer>().enabled = true;
 
-            //babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_2").GetComponent<LineRenderer>().enabled = true;
-
             abdomenStandardPlane.transform.Find("AbdomenLabelForUsImage").GetComponent<MeshRenderer>().enabled = true;
 
             CreateProbeSidedEdgeLinesForAllStandardPlanes(abdomenStandardPlane, 2);
@@ -145,8 +114,6 @@ public class StandardPlaneManager : MonoBehaviour
             femurStandardPlane.GetComponent<MeshRenderer>().enabled = true;
 
             femurStandardPlane.transform.Find("FemurPlaneMirrored").GetComponent<MeshRenderer>().enabled = true;
-
-            //babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_2").GetComponent<LineRenderer>().enabled = true;
 
             femurStandardPlane.transform.Find("FemurLabelForUsImage").GetComponent<MeshRenderer>().enabled = true;
 
@@ -179,13 +146,6 @@ public class StandardPlaneManager : MonoBehaviour
             
             headStandardPlane.transform.Find("HeadLabelForUsImage").GetComponent<MeshRenderer>().enabled = false;
 
-            //var existingProbeSidedEdgeLine1 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_1");
-            //if (existingProbeSidedEdgeLine1 != null)
-            //{
-            //    var lineObject = existingProbeSidedEdgeLine1.gameObject;
-            //    Destroy(lineObject);
-            //}
-          
             babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_1").GetComponent<LineRenderer>().enabled = false;
 
         }
@@ -198,11 +158,6 @@ public class StandardPlaneManager : MonoBehaviour
             abdomenStandardPlane.transform.Find("AbdomenLabelForUsImage").GetComponent<MeshRenderer>().enabled = false;
 
             babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_2").GetComponent<LineRenderer>().enabled = false;
-            //var existingProbeSidedEdgeLine2 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_2");
-            //if (existingProbeSidedEdgeLine2 != null)
-            //{
-            //    Destroy(existingProbeSidedEdgeLine2.gameObject);
-            //}
         }
         else if (activeStandardPlane == 3)
         {
@@ -213,11 +168,6 @@ public class StandardPlaneManager : MonoBehaviour
             femurStandardPlane.transform.Find("FemurLabelForUsImage").GetComponent<MeshRenderer>().enabled = false;
 
             babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_3").GetComponent<LineRenderer>().enabled = false;
-            //var existingProbeSidedEdgeLine3 = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_3");
-            //if (existingProbeSidedEdgeLine3 != null)
-            //{
-            //    Destroy(existingProbeSidedEdgeLine3.gameObject);
-            //}
         }
     }
 
@@ -236,9 +186,6 @@ public class StandardPlaneManager : MonoBehaviour
 
             abdomenStandardPlane.transform.Find("AbdomenPlaneMirrored").GetComponent<MeshRenderer>().enabled = false;
             femurStandardPlane.transform.Find("FemurPlaneMirrored").GetComponent<MeshRenderer>().enabled = false;
-
-            //babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_2").GetComponent<LineRenderer>().enabled = false;
-            //babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_3").GetComponent<LineRenderer>().enabled = false;
 
             abdomenStandardPlane.transform.Find("AbdomenLabelForUsImage").GetComponent<MeshRenderer>().enabled = false;
             femurStandardPlane.transform.Find("FemurLabelForUsImage").GetComponent<MeshRenderer>().enabled = false;
@@ -327,12 +274,6 @@ public class StandardPlaneManager : MonoBehaviour
 
     void CreateProbeSidedEdgeLinesForAllStandardPlanes(GameObject standardPlane, int identifier)
     {
-        // ----------- Creation of probe sided edge Line ------------------------------------------------------------------------------
-        //var existingProbeSidedEdgeLine = babyModel.transform.Find("ProbeSidedEdgeLine_CloneUSPlane_" + identifier);
-        //if (existingProbeSidedEdgeLine != null)
-        //{
-        //    Destroy(existingProbeSidedEdgeLine.gameObject);
-        //}
         Interactable deactivateMRGuidanceToggleButton = GameObject.Find("DeactivateMRGuidance").GetComponent<Interactable>();
 
         // Don't activate the standard plane visualisations if the DeactivateMRGuidance button is set to active.
