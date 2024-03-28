@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class DeletionOfUSPlanes : MonoBehaviour
 {
-   // PlaneNavigation planeNavigation;
-
     // Start is called before the first frame update
     void Start()
     {
-        //planeNavigation = gameObject.GetComponent<PlaneDistanceInformation>();
     }
 
     public void DeletePlanes()
