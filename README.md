@@ -32,4 +32,4 @@ During the navigation phase user motion data is being recorded that can be downl
 
 ## Demo video:
 Click on the image below to see our CAL-Tutor demo video on youtube:
-[![Watch the video](/readme_assets/CAL-Tutor_demo_video_screenshot.png)](https://youtu.be/g0X4uLhCjoI)
+[![Watch the video](/readme_assets/CAL-Tutor_demo_video_navigation_screenshot.png)](https://youtu.be/g0X4uLhCjoI)
