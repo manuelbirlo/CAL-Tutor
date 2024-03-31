@@ -178,8 +178,7 @@ public class CloneGameObjects : MonoBehaviour
     {
         rend.material.mainTexture = Get2DTexture(vp);
         rendererOfMirroredPlane.material.mainTexture = rend.material.mainTexture;
-        nts = false; //To stop frameReady events
-
+        
         vp = null;
         
         thumbnailOk = true;
