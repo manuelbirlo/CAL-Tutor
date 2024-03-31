@@ -33,3 +33,16 @@ During the navigation phase user motion data is being recorded that can be downl
 ## Demo video:
 Click on the image below to see our CAL-Tutor demo video on youtube:
 [![Watch the video](/readme_assets/CAL-Tutor_demo_video_navigation_screenshot.png)](https://youtu.be/g0X4uLhCjoI)
+
+## Installation on a Windows computer:
+|Please follow the steps below to open the CAL-Tutor project in the Unity editor and deploy it to your HoloLens 2 device| 
+|----------|
+|1.) Install Unity Hub via the official Unity website: https://unity.com/download|
+|2.) Open Unity Hub, click on 'Installs' tab and install a Unity version whose version number starts with 2020.3. This is an older Unity project that has been used with a Unity version from 2020. Newer Unity versions may work as well, but might cause exceptions related to changes in the version-specific Unity APIs.|
+|3.) Install Visual Studio (VS) (Unity 2020.3 may work best with Visual Studio 2019, but newer VS versions may work as well). During the Unity installation you will probably be prompted to install a VS version as well, otherwise download it from https://visualstudio.microsoft.com/|
+|4.) Clone CAL-Tutor project (for example via the Visual Studio editor).|
+|5.) Open Unity Hub, click on 'Projects', then click on the dropdown menu arrow next to "Add*, and select "Add project from disk", navigate to the 'CAL-Tutor' folder of your cloned repo and select this folder. Now the CAL-Tutor project should have been added to your Unity projects in Unity Hub. Make sure to select Unity editor version 2020.3 if you have multiple Unity versions installed. Then click on your newly added CAL-Tutor project in Unity Hub to open it in the Unity editor.|
+|6.) Build the Unity project: Follow instructions on the official Microsoft website: https://learn.microsoft.com/en-us/windows/mixed-reality/develop/unity/build-and-deploy-to-hololens and make sure that the 'CAL-Tutor' Unity scene is selected after clicking on File --> Build Settings. |
+|7.) If the build was successfull, navigate to your folder containing the build results and open the VS solution 'CAL-Tutor.sln'. Now you have multiple options to deploy CAL-Tutor to your HoloLens 2. Please follow the instructions of the Microsoft website: https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/using-visual-studio?tabs=hl2|
+
+
