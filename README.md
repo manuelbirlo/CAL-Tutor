@@ -45,4 +45,18 @@ Click on the image below to see our CAL-Tutor demo video on youtube:
 |6.) Build the Unity project: Follow instructions on the official Microsoft website: https://learn.microsoft.com/en-us/windows/mixed-reality/develop/unity/build-and-deploy-to-hololens and make sure that the 'CAL-Tutor' Unity scene is selected after clicking on File --> Build Settings. |
 |7.) If the build was successfull, navigate to your folder containing the build results and open the VS solution 'CAL-Tutor.sln'. Now you have multiple options to deploy CAL-Tutor to your HoloLens 2. Please follow the instructions of the Microsoft website: https://learn.microsoft.com/en-us/windows/mixed-reality/develop/advanced-concepts/using-visual-studio?tabs=hl2|
 
+## Citation
 
+If you would like to reference this work in your research, please use the following:
+
+```bibtex
+@article{birlo2022cal,
+  title={CAL-tutor: A HoloLens 2 application for training in obstetric sonography and user motion data recording},
+  author={Birlo, Manuel and Edwards, Philip J Eddie and Yoo, Soojeong and Dromey, Brian and Vasconcelos, Francisco and Clarkson, Matthew J and Stoyanov, Danail},
+  journal={Journal of Imaging},
+  volume={9},
+  number={1},
+  pages={6},
+  year={2022},
+  publisher={MDPI}
+}
