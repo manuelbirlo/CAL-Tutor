@@ -15,7 +15,7 @@ The application uses the Mixed Reality Toolkit (MRTK) (https://github.com/micros
 
 The provided holographic models are: 
 - Baby incl. mother's abdomen (based on a 3D reconstruction of a phantom that is being used for medical education)<br>
-- Clarius wireless ultrasound probe (https://clarius.com/)
+- Voluson E10 ultrasound probe (GE Healthcare, Chicago, USA)
 - A holographic menu with several options
 
 The application workflow consists of the following steps: 
